@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p class="Large-Bold-RED">ガンマ分布はどのような生命科学的モデルなのか-02？</p>
+<p>未だ，私の中ではっきりはしていませんが，諸先生方と議論をしていただき，現時点で結論付いたことは，<br />
+　ガンマ分布では二つのモデルを区別することはできない<br />
+と言う結論です．<br />
+つまり，ガンマ分布は，<br />
+　<span class="Large-Bold-RED">事象（入力）の発生間隔が指数分布に従っているもの</span><br /> 
+を定義としていることのようです．<br />
+ですので，<br />
+<span class="Blue"><strong>　各事象は逐次的に起こる</strong></span><br />
+場合には，</p>
+<p><img src="Gamma-02.png" width="574" height="190" /><br />
+ランダムに発生する入力事象の間隔は，指数分布にしたいがいますし，<br />
+<span class="Blue"><strong>　各事象は逐次的に起こる</strong></span><br />
+場合にも，</p>
+<p><img src="Chemical reactin-29.gif" width="198" height="40" /></p>
+<p>ただ，ガンマ分布の重要なポイントして，<br />
+　<span class="Large-Bold-RED">各入力事象に個性はない</span><br />
+と言うことなので，上記の逐次反応のように，<br />
+　k1 ≠ k2<br />
+の場合には，A→B，が起こってから後，B→Cが起こる，というように明らかに順番が決まっていますので，厳密にはこれはガンマ分布とはいえません．なので，</p>
+<p><img src="Gamma-17.gif" width="153" height="33" /></p>
+<p>のように，各反応速度が同一であれば，これはガンマ分布といえそうです．<br />
+しかし，実際の生化学的な逐次反応においては，一つの反応が他の反応に比べて極端に遅い，律速段階，なるものが往々にしてあるので，厳密な意味において，ガンマ分布に従うものは少ないのでは？と思います．</p>
+<p> 2003年の論文，<br />
+  <span id="__firefox-findbar-search-id">Kimura, Y., Toyoshima, N., Hirakawa, N., Okamoto, K. &amp; <strong>Ishijima, A.</strong> (2003). A kinetic mechanism for the fast movement of Chara myosin. <em>Journal of Molecular Biology</em> <strong>328</strong>, 939-950.</span><br />
+  において，1分子の相互作用の発生時の時間の分布があたかもガンマ分布のようにピークを持ったのは，<br />
+　ADPの解離，新しいATPの結合<br />
+の各自定数が，ATP 1uM，の条件でほぼ等しかったので，そうなったといえそうです．</p>
+<p>と言うことで，結論からいうと，<br />
+　<span class="Large-Bold-RED">実験結果がガンマ分布に従ったからといってすぐに唯一のモデルを提唱できるわけではない</span><br />
+と言うことですね．<br />
+ガンマ分布はとても使いやすい（ピークを持つ分布ならある程度フィットできる，条件を変えてピークがないような分布になっても何となく説明が付きやすい）モデルですので，使い方は注意した方がいいかもしません．</p>
+<p>&nbsp;</p>
+<p>おまけ：<br />
+しかし，<a href="http://www.tagen.tohoku.ac.jp/labo/ishijima/Chemical%20reactin-18.html">先の説明</a>では，</p>
+<p><img src="Chemical reactin-73.gif" width="163" height="55" /></p>
+<p>と記述していましたね？<br />
+これは，先に導いたガンマ分布の式，</p>
+<p><img src="Gamma-18.gif" width="148" height="65" /></p>
+<p>とは全然違いますね？<br />
+  しかも，<a href="http://www.tagen.tohoku.ac.jp/labo/ishijima/Chemical%20reactin-18.html">先の説明</a>において，α＝β，とおくと計算ができません．<br />
+なぜでしょう？これも．．．諸先生方に教わりましたので，<a href="gamma-sp-02.html">ここ</a>をご覧ください．<br />
+</p>
+<p><a href="gamma-06.html"><img src="L-arrow.png" alt="" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" width="57" height="34" /></a></p>
+</body>
+</html>

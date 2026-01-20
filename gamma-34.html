@@ -1,0 +1,61 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ガンマ分布と逐次反応-04</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p class="Large-Bold-Red">・nステップ</p>
+<p>今までの結果をまとめると，</p>
+<p>\( \Large P_{n=2} = \lambda^2 \cdot t \cdot e^{- \lambda t} \)</p>
+<p>\( \Large P_{n=3} = \frac{\lambda^3  \cdot t^2 \cdot e^{- \lambda t} }{2} \) </p>
+<p>\( \Large P_{n=4} = \frac{\lambda^4  \cdot t^3 \cdot e^{- \lambda t} }{3 \cdot 2} \) </p>
+<p>となりますので，</p>
+<p>\( \Large P_{n} = \frac{\lambda^n  \cdot t^{n-1} \cdot e^{- \lambda t} }{(n-1)!} \) </p>
+<p>という関係を得ることができます．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・ガンマ分布</p>
+<p>ガンマ分布は，</p>
+<p>\( \Large P(x) = \frac{x^{\alpha-1}   \cdot e^{- \frac{x}{\theta}} }{\Gamma(\alpha) \cdot \Theta^{\alpha}} \) </p>
+<p>です．ここで変数を，<br>
+  　x　→　t　：　（時間）<br>
+　θ　→　1/λ　：　（λはステップの速度定数）<br>
+　α　→　ｎ　：　（逐次反応のステップ数）<br>
+と置き換えると，</p>
+<p>\( \begin{eqnarray} \Large P(t) &amp;=&amp; \frac{t^{n-1}   \cdot e^{- \lambda t}}{(n-1)! \cdot \left( \frac{1}{\lambda} \right)^n} \\<br>
+  &amp;=&amp; 
+\frac{\lambda^n \cdot t^{n-1}   \cdot e^{- \lambda t}}{(n-1)! } \\<br>
+\end{eqnarray}  \)</p>
+<p>となり，<span class="Red-Bold">ｎステップの逐次反応</span>と<span class="Red-Bold">ガンマ分布</span>は同じ関数になることがわかります</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="gamma-33.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+
+<!DOCTyPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Histogram vs accumulation</title>
+
+<script type="text/javascript"
+
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+
+</script>
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+.style7 {color: #000000; }
+
+.style10 {color: #000000; }
+
+.style1 {color: #0000FF}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<h1 class="style1">　累積関数とヒストグラム　-　03</h1>
+<p class="X-Large-Bold-RED">・二つの指数関数の和</p>
+<p>二つの指数関数の和の確率密度は，</p>
+<p>\(\Large \displaystyle   P(x) = A_0 \left[ p \cdot exp (-k_1 \ x) + (1-p) \cdot exp (-k_2 \ x) \right] \)</p>
+<p>です．この場合の比例係数，A<sub>0</sub>，は，</p>
+<p>\(\Large \displaystyle   \int_0^{\infty}  A_0 \left[ p \cdot exp (-k_1 \ x) + (1-p) \cdot exp (-k_2 \ x) \right] dx \)</p>
+<p>となります．それぞれ独立に積分できるので，</p>
+<p>\(\Large \displaystyle   = \int_0^{\infty}  A_0  p \cdot exp (-k_1 \ x) dx + \int_0^{\infty} A_0 (1-p) \cdot exp (-k_2 \ x)  dx \)</p>
+<p>\(\Large \displaystyle    = - \frac{A_0 p}{k_1} [0-1] - \frac{A_0 (1-p)}{k_2} [0-1]\)</p>
+<p>\(\Large \displaystyle    = A_0 \left[ \frac{p}{k_1} +  \frac{1-p}{k_2} \right] \)</p>
+<p>\(\Large \displaystyle    = A_0 \left[ \frac{p k_2 +(1-p) k_1}{k_1 k_2}  \right] = 1\)</p>
+<p>となるので，</p>
+<p>\(\Large \displaystyle     A_0 = \frac{k_1 k_2}{p k_2 +(1-p) k_1} \)</p>
+<p>となります，したがって確率密度は，</p>
+<p>\(\Large \displaystyle   P(x) = \frac{k_1 k_2}{p k_2 +(1-p) k_1} \left[ p \cdot exp (-k_1 \ x) + (1-p) \cdot exp (-k_2 \ x) \right] \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">解法：</p>
+<p>bin（d）ごとに集計します．</p>
+<p>その総和は推定したデータ数，N，となりますので，</p>
+<p>\(\Large \displaystyle N = N_1 + N_2 = Np + N(1-p) = C_1 \cdot \sum_{i=0}^\infty   \left[ exp (-k_1 \ d \ i) \right] + C_2 \cdot \sum_{i=0}^\infty   \left[ exp (-k_2 \ d \ i) \right]\)</p>
+<p>\(\Large \displaystyle  N_1  = Np = C_1 \cdot \sum_{i=0}^\infty   \left[ exp (-k_1 \ d \ i) \right] \)</p>
+<p>\(\Large \displaystyle  N_2  = Np = C_2 \cdot \sum_{i=0}^\infty   \left[ exp (-k_2 \ d \ i) \right] \)</p>
+<p>と別々に計算すればいいので．それぞれに計算すると，</p>
+<p>\(\Large \displaystyle  N_1  = Np = C_1 \frac{1}{1 - exp (-k_1 \ d )} \Rightarrow    C_1  = Np [1 - exp (-k_1 \ d )] \)</p>
+<p>\(\Large \displaystyle  N_2  = Np = C_2 \frac{1}{1 - exp (-k_2 \ d )} \Rightarrow    C_2  = N(1-p) [1 - exp (-k_2 \ d )] \)</p>
+<p>となるので，<span class="Red-Bold">C<sub>1</sub>+C<sub>2</sub></span>の高さを基準とした関数となるわけです．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・実際の計算</p>
+<p>実際に，ランダム関数から指数分布を二つ作成して（詳細は<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/Random%20number-03.html">ここ</a>），ｋ，ｄを色々変えて計算させると，</p>
+<p>k1=0.2, k2=0.05,p=0.6, d=0.7, N=1000, -&gt; 94.143</p>
+<p><img src="Histogram vs accumulation-06.png" width="622" height="368" alt=""/></p>
+<p>&nbsp;</p>
+<p>k1=0.2, k2=0.05,p=0.6, d=1, N=1000, -&gt; 128.27</p>
+<p><img src="Histogram vs accumulation-07.png" width="620" height="367" alt=""/></p>
+<p>k1=0.3, k2=0.05,p=0.6, d=1, N=1000, -&gt; 175.02</p>
+<p><img src="Histogram vs accumulation-08.png" width="616" height="365" alt=""/></p>
+<p>ときれいにフィットできました．</p>
+<p>&nbsp;</p>
+<p>次は，<span class="Large-Bold-Blue">逐次反応</span>，の場合です．</p>
+<p>&nbsp;</p>
+
+
+<p><span class="style10"><a href="Histogram vs accumulation-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Histogram vs accumulation-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+
+</body>
+
+</html>
+

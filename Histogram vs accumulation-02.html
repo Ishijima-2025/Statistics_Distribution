@@ -1,0 +1,101 @@
+
+<!DOCTyPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Histogram vs accumulation</title>
+
+<script type="text/javascript"
+
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+
+</script>
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+.style7 {color: #000000; }
+
+.style10 {color: #000000; }
+
+.style1 {color: #0000FF}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<h1 class="style1">　累積関数とヒストグラム　-　02</h1>
+<p class="X-Large-Bold-RED">・単一指数関数</p>
+<p>単一指数関数の確率密度は，</p>
+<p>\(\Large \displaystyle   P(x) = k \ exp (-k \ x) \)</p>
+<p>です．この場合の累積密度関数は，</p>
+<p>\(\Large \displaystyle   \int_0^x  k \ exp (-k \ x') dx' = -\frac{k}{k} \left[ exp (-k \ x') \right]_0^x = 1 - exp (-k \ x) \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">解法１：</p>
+<p>累積密度関数で推定したパラメータを基に，ヒストグラムを作成した場合，</p>
+<p><img src="Histogram vs accumulation-01.png" width="483" height="445" alt=""/></p>
+<p>この図のように，bin（d）ごとに集計します．</p>
+<p>その総和は推定したデータ数，N，となりますので，</p>
+<p>\(\Large \displaystyle N = C \cdot \sum_{i=0}^\infty   \left[ exp (-k \ d \ i) \right] \)</p>
+<p>となります，このCを求めたいわけです．</p>
+<p>\(\Large \displaystyle y =  \sum_{i=0}^\infty   \left[ exp (-k \ d \ i) \right] = 1 + exp (-k \ d)  + exp (-2 k \ d)  + exp (-3 k \ d)...... \)</p>
+<p>\(\Large \displaystyle y \cdot  exp (-k \ d) =  \hspace{74 pt} exp (-k \ d)  + exp (-2 k \ d)  + exp (-3 k \ d)...... \)</p>
+<p>となるので，二つの式の引き算をとると，</p>
+<p>\(\Large \displaystyle y - y \cdot  exp (-k \ d) =1 \)</p>
+<p>\(\Large \displaystyle y =\frac{1}{1-  exp (-k \ d)} \)</p>
+<p>となるので，</p>
+<p>\(\Large \displaystyle N = C \cdot \frac{1}{1-  exp (-k \ d)} \)</p>
+<p>となり，結局Cは，</p>
+<p>\(\Large \displaystyle C = N \cdot [ 1-  exp (-k \ d) ] \)</p>
+<p>となるので，ヒストグラムは，Cの高さを基準にした指数関数となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">解法２：</p>
+<p>指数関数で表した場合，0～ｄの割合は，</p>
+<p><img src="Histogram vs accumulation-02.png" width="509" height="469" alt=""/></p>
+<p>\(\Large \displaystyle \int_0^d    exp (-k \ x) \ dx = -\frac{k}{k} \left[ exp (-k \ x) \right]_0^d = 1- exp (-k \ d)\)</p>
+<p>となるので，全体の数，Ｎ，のうち</p>
+<p>\(\Large \displaystyle N \cdot [1- exp (-k \ d) ] \)</p>
+<p>が基準となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・実際の計算</p>
+<p>実際に，ランダム関数から指数分布を作成して（詳細は<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/Random%20number-03.html">ここ</a>），ｋ，ｄを色々変えて計算させると，</p>
+<p>k=0.1, d=1, N=1000, -&gt; 95.16</p>
+<p><img src="Histogram vs accumulation-03.png" width="775" height="421" alt=""/></p>
+<p>k=0.1, d=0.5, N=1000, -&gt; 48.77</p>
+<p><img src="Histogram vs accumulation-04.png" width="771" height="418" alt=""/></p>
+<p>k=0.2, d=0.5, N=1000, -&gt; 95.16</p>
+<p><img src="Histogram vs accumulation-05.png" width="773" height="420" alt=""/></p>
+<p>ときれいにフィットできました．</p>
+<p>ちなみに，エクセルで散布図で棒グラフを作る方法は，<a href="https://news.mynavi.jp/techplus/article/Excelgraphzissentech-25/" target="_blank">ここ</a>，を参考にしました．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">短いデータが欠損している場合</p>
+<p><a href="Chemical reactin-15.html">ここ</a>，で説明しているように，累積関数でのフィットは短いデータが欠損している場合に有効です．</p>
+<p>その際には，</p>
+<p>\(\Large \displaystyle \frac{ [A_0]}{k} \cdot \left( 1 - e^{-kt} \right) + D \)</p>
+<p>でフィットできることを示しました．書き換えると，</p>
+<p>\(\Large \displaystyle N_1 \cdot \left( 1 - e^{-kt} \right) + N_2 \)</p>
+<p>という関数で表すことができます．ここで，ヒストグラムにフィットさせる場合には，欠損しているデータ数も加えなくてはならないので，</p>
+<p>\(\Large \displaystyle N = N_1  + N_2 \)</p>
+<p>として計算することになります．</p>
+<p>&nbsp;</p>
+<p>次は，<span class="Large-Bold-Blue">二つの指数関数の和</span>，の場合です．</p>
+
+
+<p><span class="style10"><a href="Histogram vs accumulation-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Histogram vs accumulation-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+
+</body>
+
+</html>
+

@@ -1,0 +1,65 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>gamma</title>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ガンマ分布と逐次反応-01</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>逐次反応のステップ数とガンマ分との関係はいくつか記載しましたが（<a href="http://www.tagen.tohoku.ac.jp/labo/ishijima/Chemical%20reactin-18.html">ここ</a>，<a href="http://www.tagen.tohoku.ac.jp/labo/ishijima/Chemical reactin-19.html">ここ</a>，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/gamma-01.html">ここ</a>，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/gamma-06.html">ここ</a>，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/gamma-07.html">ここ</a>），</p>
+<p class="Large-Bold-Blue">多段階の逐次反応がなぜガンマ分布で説明できるか？</p>
+<p>という点についてまとめてみます．</p>
+<p>ここで，条件として，</p>
+<p class="Red-Bold">　各状態間の速度定数はすべて同じ，λ(1/s)，である</p>
+<p>があります</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・2ステップ</p>
+<p>計算は，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/gamma-sp-02.html">ここ</a>，と同じです．</p>
+<p><img src="Chemical reactin-22.jpg" width="420" height="234" alt=""/></p>
+<p>&nbsp;</p>
+<p>\( \Large     A \xrightarrow{\lambda} B \xrightarrow{\lambda} C\)</p>
+<p>という状態を考えます．</p>
+<p>それぞれのステップの時間が，t<sub>1</sub>, t<sub>2</sub>である時間は，</p>
+<p>\( \Large     A \xrightarrow{\lambda} B : \lambda e^{- \lambda t_1} \)</p>
+<p>\( \Large     B \xrightarrow{\lambda} C : \lambda e^{- \lambda t_2} \)</p>
+<p>つまり，t=t<sub>1</sub>+t<sub>2</sub>，であるためには，</p>
+<p>\( \Large     t_2 = t - t_1 \)</p>
+<p>の関係があるので，それぞれの確率の積を，t<sub>1</sub>を，0～tに渡って積分すればいいのです．</p>
+<p>\( \Large  \begin{eqnarray} &amp;&amp; \displaystyle \int_{0}^{ t} \lambda e^{- \lambda t_1} \cdot \lambda e^{- \lambda (t-t_1)} dt_1 \\<br>
+  &amp;=&amp; \lambda^2 \displaystyle \int_{0}^{ t}  e^{- \lambda t_1} \cdot  e^{- \lambda t} \cdot e^{ \lambda t_1} dt_1\\<br>
+  &amp;=&amp; \lambda^2  e^{- \lambda t} \cdot \displaystyle \int_{0}^{ t}   dt_1\\<br>
+  &amp;=&amp; \lambda^2 \cdot t \cdot e^{- \lambda t} \\<br>
+  \end{eqnarray}  \)</p>
+<p>となります．</p>
+<p>次は<span class="Blue-Bold">3ステップ</span>．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="gamma-32.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

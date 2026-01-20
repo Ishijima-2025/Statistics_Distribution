@@ -1,0 +1,61 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ガンマ分布と逐次反応-02</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p class="Large-Bold-Red">・3ステップ</p>
+<p>計算は，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/Chemical reactin-19.html">ここ</a>，と同じです．</p>
+<p><img src="Chemical reactin-23.jpg" width="529" height="297" alt=""/></p>
+<p>\( \Large     A \xrightarrow{\lambda} B \xrightarrow{\lambda} C  \xrightarrow{\lambda} D\)</p>
+<p>という状態を考えます．</p>
+<p>それぞれのステップの時間が，t<sub>1</sub>, t<sub>2</sub>である時間は，</p>
+<p>\( \Large     A \xrightarrow{\lambda} B : \lambda e^{- \lambda t_1} \)</p>
+<p>\( \Large     B \xrightarrow{\lambda} C : \lambda e^{- \lambda t_2} \)</p>
+<p>\( \Large     C \xrightarrow{\lambda} D : \lambda e^{- \lambda t_3} \)</p>
+<p>つまり，t=t<sub>1</sub>+t<sub>2</sub>+t<sub>3</sub>であるためには，</p>
+<p>\( \Large     t_3 = t - t_1 -t_2 \)</p>
+<p>の関係があるので，それぞれの確率の積を，t<sub>2</sub>を，0～t<sub>1</sub>に渡って，t<sub>1</sub>を，<span class="Red-Bold">0～t-t<sub>1</sub></span>に渡って，積分すればいいのです．</p>
+<p>\( \Large  \begin{eqnarray} &amp;&amp; \displaystyle \int_{0}^{ t} \displaystyle \int_{0}^{\color{red}{t- t_1}} \lambda e^{- \lambda t_1} \cdot \lambda e^{- \lambda t_2} \cdot \lambda e^{- \lambda (t-t_1-t_2)} dt_2 dt_1 \\<br>
+  &amp;=&amp; \lambda^3 \displaystyle \int_{0}^{ t} \displaystyle \int_{0}^{\color{red}{t- t_1}}  e^{- \lambda t_1} \cdot  e^{- \lambda t_2} \cdot  e^{- \lambda t} \cdot e^{ \lambda t_1} \cdot  e^{ \lambda t_2} dt_2 dt_1\\<br>
+  &amp;=&amp; \lambda^3  e^{- \lambda t} \cdot \displaystyle \int_{0}^{ t} \displaystyle \int_{0}^{\color{red}{t- t_1}} dt_2 dt_1\\<br>
+  &amp;=&amp; \lambda^3  e^{- \lambda t} \cdot \displaystyle \int_{0}^{ t}   \color{red}{\left( t-t_1 \right)}dt_1\\<br>
+  &amp;=&amp; \lambda^3  e^{- \lambda t} \cdot \left[\color{red}{ t \cdot t_1 - \frac{1}{2} t_1^2} \right]^t_0 \\<br>
+  &amp;=&amp; \lambda^3  e^{- \lambda t} \cdot \left(\color{red}{ t^2 - \frac{1}{2} t^2} \right) \\<br>
+  &amp;=&amp; \lambda^3  e^{- \lambda t} \cdot \color{red}{  \frac{1}{2} t^2}  \\  <br>
+  &amp;=&amp; \frac{\lambda^3  \cdot t^2 \cdot e^{- \lambda t} }{2} \\<br>
+  \end{eqnarray}  \)</p>
+<p>となります．</p>
+<p>次は<span class="Blue-Bold">4ステップ</span>．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="gamma-31.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="gamma-33.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

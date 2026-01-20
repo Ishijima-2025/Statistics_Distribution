@@ -1,0 +1,85 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Histogram vs accumulation</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<link href="160324.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+.style7 {color: #000000; }
+
+.style10 {color: #000000; }
+
+.style1 {color: #0000FF}
+
+</style>
+</head>
+
+
+
+<body>
+
+<h1 class="style1">　累積関数とヒストグラム　-　05</h1>
+<p class="X-Large-Bold-RED">・正規分布</p>
+<p>次は，化学反応ではなく正規分布の場合，これも累積関数でフィットできます．</p>
+<p>正規分布の確率分布は，</p>
+<p>\(\Large \displaystyle   P(x) =  \frac{1}{\sqrt{2 \pi } \sigma } exp \left[- \frac{ (x - \mu)^2}{2 \sigma^2}  \right]  \)</p>
+<p>ですが，ピークの高さを求めるので，平均値，μ，は無視してかまいません．</p>
+<p>\(\Large \displaystyle   P(x) =  \frac{1}{\sqrt{2 \pi } \sigma } exp \left[- \frac{ x ^2}{2 \sigma^2}  \right]  \)</p>
+<p><img src="Histogram vs accumulation-12.png" width="345" height="246" alt=""/></p>
+<p>ですので，０～d/2，まで積分して2倍した値がその割合となります．</p>
+<p>\(\Large \displaystyle   2 N \int_0^{d/2}  \frac{1}{\sqrt{2 \pi } \sigma } exp \left[- \frac{ x ^2}{2 \sigma^2}  \right]  dx \)</p>
+<p>ここで，</p>
+<p>\(\Large \displaystyle   \frac{ x ^2}{2 \sigma^2}   \equiv y^2 \)</p>
+<p>とすれば，</p>
+<p>\(\Large \displaystyle   \frac{ x }{\sqrt{2} \sigma}   = y \)</p>
+<p>\(\Large \displaystyle   \frac{ dx }{\sqrt{2} \sigma}   = dy \)</p>
+<p>x,yの範囲は，</p>
+<p>\(\Large \displaystyle   0  \hspace{20 pt} &lt; \hspace{20 pt} x \hspace{20 pt} &lt;  \hspace{20 pt} d/2 \)</p>
+<p>\(\Large \displaystyle   0  \hspace{20 pt} &lt; \hspace{20 pt} y \hspace{20 pt} &lt;  \hspace{20 pt} \frac{d}{2 \sqrt{2} \sigma} \)</p>
+<p>となるので，</p>
+<p>\(\Large \displaystyle   2 N \frac{1}{\sqrt{2 \pi } \sigma } \int_0^{\frac{d}{2 \sqrt{2} \sigma}}   exp (- y^2  ) \ \sqrt{2} \sigma \ dy \)</p>
+<p>\(\Large \displaystyle   = \frac{2N}{\sqrt{ \pi }} \int_0^{\frac{d}{2 \sqrt{2} \sigma}}  exp (- y^2  )  \ dy \)</p>
+<p>となります．この積分は，誤差関数で表すことができます．誤差関数は，</p>
+<p>\(\Large \displaystyle   erf(x) = \frac{2}{\sqrt{ \pi }} \int_0^{x}  exp (- t^2  )  \ dt \)</p>
+<p>ですので，</p>
+<p>\(\Large \displaystyle   = \frac{2N}{\sqrt{ \pi }} \int_0^{\frac{d}{2 \sqrt{2} \sigma}}  exp (- y^2  )  \ dy \)</p>
+<p>\(\Large \displaystyle   = 2 N \frac{1}{\sqrt{ \pi }} \frac{ \sqrt{ \pi}}{2} erf \left( \frac{d}{2 \sqrt{2} \sigma}   \right) \)</p>
+<p>\(\Large \displaystyle   =  N  \cdot erf \left( \frac{d}{2 \sqrt{2} \sigma}   \right) \)</p>
+<p>とピークの値を表すことができます．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・実際の計算</p>
+<p>実際に，正規分布を作成して（=NORMINV(RAND(),mean,sd)），mean，sｄを色々変えて計算させると，</p>
+<p>μ=10, σ=2, d=0.2, N=1000, -&gt; Peak=39.88</p>
+<p><img src="Histogram vs accumulation-13.png" width="535" height="368" alt=""/></p>
+<p>μ=10, σ=2, d=0.3, N=1000, -&gt; Peak=59.79</p>
+<p><img src="Histogram vs accumulation-14.png" width="545" height="375" alt=""/></p>
+<p>μ=10, σ=3, d=0.3, N=1000, -&gt; Peak=39.88</p>
+<p><img src="Histogram vs accumulation-15.png" width="556" height="382" alt=""/></p>
+<p>ときれいにフィットできました．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="Histogram vs accumulation-04.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+
+</body>
+
+</html>
+

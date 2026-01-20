@@ -1,0 +1,104 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>gamma</title>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ガンマ分布の性質-01</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">規格化</p>
+<p>ガンマ分布は，</p>
+<p>\(\Large    \displaystyle    f(t) =  \frac{x^{ k -1} \ exp^{ - x/ \theta}}{ \Gamma ( k ) \ \theta^{ k } }   
+\)</p>
+<p>です．ここで，ガンマ関数は，</p>
+<p>\(\Large    \displaystyle    \Gamma(x) = \int_0^{ \infty} t^{x -1} \ e^{ - t} dt
+\)</p>
+<p>となります．規格化を検討するには，全積分（0から∞）が1となればいいので，</p>
+<p>\(\Large    \displaystyle     \int_0^{ \infty}  \frac{x^{ k -1} \ e^{ - x/ \theta}}{ \Gamma ( k ) \ \theta^{ k } }   dx<br />
+\)</p>
+<p>を考えます．変数変換を行い，</p>
+<p>\(\Large    \displaystyle    y \equiv \frac{x}{ \theta} \rightarrow dy = 
+\frac{dx}{ \theta} \)</p>
+<p>\(\Large    \displaystyle    0 \sim x \sim \infty \)</p>
+<p>\(\Large    \displaystyle    0 \sim y \sim \infty \)</p>
+<p>\(\Large    \displaystyle     \frac{1}{\Gamma ( k ))} \int_0^{ \infty}  x^{ k -1} \ e^{ - x/ \theta}  \ \theta^{ -k }   dx\)</p>
+<p>\(\Large    \displaystyle     = \frac{1}{\Gamma ( k ))} \int_0^{ \infty}  (y \theta)^{ k -1} \cdot e^{ -y}  \cdot \theta^{ -k }   \cdot \theta \ dy\)</p>
+<p>\(\Large    \displaystyle     = \frac{1}{\Gamma ( k ))} \int_0^{ \infty}  y ^{ k -1} \cdot e^{ -y} \ dy\)</p>
+<p>\(\Large    \displaystyle     =     \displaystyle\frac{     \displaystyle \int_0^{ \infty}  y ^{ k -1} \cdot e^{ -y} \ dy}{     \displaystyle \int_0^{ \infty} t^{x -1} \cdot e^{ - t} \ dt
+} \)</p>
+<p>と分子・分母とも同じ積分となるので，<span class="Large-Bold-Red">１</span>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">期待値</p>
+<p>期待値は，</p>
+<p>\(\Large    \displaystyle    E[x] = \int_0^{ \infty} x \ f(x) dx<br />
+\)</p>
+<p>ですので，ガンマ分布の期待値は，</p>
+<p>\(\Large    \displaystyle    E[x] = \int_0^{ \infty} x \ \frac{x^{ k -1} \ e^{ - x/ \theta}}{ \Gamma ( k ) \ \theta^{ k } }   dx<br />
+\)</p>
+<p>\(\Large    \displaystyle     = \int_0^{ \infty}  \frac{x^{ (k+1) -1} \ e^{ - x/ \theta}}{ \Gamma ( k ) \ \theta^{ k } }   dx<br />
+\)</p>
+<p>ガンマ関数の性質として，</p>
+<p>\(\Large    \displaystyle     \Gamma(z+1) = z \ \Gamma ( z )   dx<br />
+\)</p>
+<p>があります．（詳細は，<a href="Gamma_function-01.html">ここ</a>）．したがって，k+1，の形に持っていくと，期待値は，</p>
+<p>\(\Large    \displaystyle     = \int_0^{ \infty} \frac{ \theta \ x^{ (k+1) -1} \ e^{ - x/ \theta}}{ k^{-1} \ \Gamma ( k+1 ) \ \theta^{ k+1} }   dx<br />
+\)</p>
+<p>\(\Large    \displaystyle     = k \theta \int_0^{ \infty} \frac{  \ x^{ (k+1) -1} \ e^{ - x/ \theta}}{  \Gamma ( k+1 ) \ \theta^{ k+1} }   dx<br />
+\)</p>
+<p>この積分項は，k+1のガンマ分布の全積分となるので，1となります．したがって，</p>
+<p>\(\Large    \displaystyle    E[x] = k \theta
+\)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">分散</p>
+<p>二乗の期待値は</p>
+<p>\(\Large    \displaystyle    E[x^2] = \int_0^{ \infty} x^2 \ f(x) dx<br />
+  \)</p>
+<p>ですので，ガンマ分布の二乗の期待値は，</p>
+<p>\(\Large    \displaystyle    E[x^2] = \int_0^{ \infty} x^2 \ \frac{x^{ k -1} \ e^{ - x/ \theta}}{ \Gamma ( k ) \ \theta^{ k } }   dx<br />
+  \)</p>
+<p>\(\Large    \displaystyle     = \int_0^{ \infty}  \frac{x^{ (k+2) -1} \ e^{ - x/ \theta}}{ \Gamma ( k ) \ \theta^{ k } }   dx<br />
+\)</p>
+<p>上の期待値と同様に，</p>
+<p>\(\Large    \displaystyle     = \int_0^{ \infty} \frac{ \theta^2 \ x^{ (k+2) -1} \ e^{ - x/ \theta}}{ k^{-1} \ \Gamma ( k+1 ) \ \theta^{ k+2} }   dx<br />
+\)</p>
+<p>\(\Large    \displaystyle     = \int_0^{ \infty} \frac{ \theta^2 \ x^{ (k+2) -1} \ e^{ - x/ \theta}}{ k^{-1} (k+1)^{-1} \ \Gamma ( k+2 ) \ \theta^{ k+2} }   dx<br />
+\)</p>
+<p>\(\Large    \displaystyle     = k (k+1) \ \theta^2 \int_0^{ \infty} \frac{  \ x^{ (k+2) -1} \ e^{ - x/ \theta}}{ \ \Gamma ( k+2 ) \ \theta^{ k+2} }   dx<br />
+\)</p>
+<p>この積分項は，k+2のガンマ分布の全積分となるので，1となります．したがって，</p>
+<p>\(\Large    \displaystyle    E[x^2] =  k (k+1) \ \theta^2\)</p>
+<p>となります．分散は，</p>
+<p>\(\Large    \displaystyle    V[x] = E[x^2] - (E[x])^2 =  k (k+1) \ \theta^2 - (k \theta)^2 = k \theta^2 \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p class="Large-Bold-RED">ガンマ関数の導出-1</p>
+<p>では，まず，<a href="http://mathworld.wolfram.com/GammaDistribution.html" target="_blank">WolframMathWorld</a>，ではどのようにして導出していくかを見ていきましょう．</p>
+<p>説明によると，<br />
+　Consider the distribution function <strong>D(x)</strong> of waiting times until the <strong>h</strong>th Poisson event given a Poisson distribution with a rate of change <strong>λ</strong>,<br />
+とあります．ここで， <span class="Large-Blue">distribution function</span>，とは，<br />
+　<span class="Large-Red"><a href="http://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83#.E5.88.86.E5.B8.83.E9.96.A2.E6.95.B0" target="_blank">分布関数</a></span><br />
+と言う意味ですが，<span class="Large-Red"><a href="http://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83#.E5.88.86.E5.B8.83.E9.96.A2.E6.95.B0" target="_blank">累積分布関数</a></span>，ともいいます．<br />
+つまり，-∞（もしくは∞）から，x，までに該当する確率，と考えればいいでしょう．</p>
+<p>と言うことで，<strong>D(x)</strong>，とは，<br />
+　レート，<strong>λ</strong>，で起こるランダムなイベントが<strong>h回以上</strong>起こる確率<br />
+と言うことになります，式に表すと，</p>
+<p><img src="Gamma-02.gif" width="141" height="33" /></p>
+<p>となります．<br />
+と言うことは，h回未満起こる確率を全体から引いたものに等しいので，</p>
+<p>　<img src="Gamma-03.gif" width="118" height="33" />　</p>
+<p>と同じことになります．<br />
+ここで，h回未満起こる確率，とは，たとえば，<br />
+　h=3<br />
+とすると，<br />
+　h=0,1,2<br />
+回起こる確率を意味します．このイベントはポアソン過程に従うので，</p>
+<p>　<img src="Gamma-04.gif" width="158" height="133" /></p>
+<p>と置き換えることができます．</p>
+<p>次に，累積ではなく，ある，x，に対して起こる確率，<a href="http://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83#.E5.88.86.E5.B8.83.E9.96.A2.E6.95.B0" target="_blank"><span class="Large-Blue">確率密度関数</span></a>，を考えていきましょう．</p>
+<p><a href="gamma-01.html"><img src="L-arrow.png" alt="" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" width="57" height="34" /></a> <a href="gamma-03.html"><img src="R-arrow.png" width="57" height="34" border="0" /></a></p>
+</body>
+</html>

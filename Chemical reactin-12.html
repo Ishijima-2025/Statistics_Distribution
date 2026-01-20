@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style2 {
+	font-size: large;
+	color: #FF0000;
+}
+.style4 {font-size: large; color: #FF0000; font-weight: bold; }
+.style7 {color: #000000; }
+-->
+</style>
+</head>
+
+<body>
+<h3 class="style1">・ヒストグラムを用いた解析</h3>
+<p>前ページまでのように濃度変化，つまり時間平均の場合の解析は比較的楽です．<br />
+  では，アンサンブル平均の場合，個々の分子の挙動の場合はどのようにすればいいでしょう？<br />
+  それは，まずは<span class="style2">ヒストグラム</span>をとることです．<br />
+  ヒストグラムはご存じのようにある設定値の中に入るデータの個数を並べるものですね．<br />
+  これを使えば，個々の分子の反応時間を取得し，これらを時間ごとに区分けして，その数をプロットすればいいのです．<br />
+  しかし．．．問題は，手軽なヒストグラムの作成方法がない，というものです．<br />
+  もちろん，エクセルやグラフ作成ソフトにはヒストグラムの作成コマンドがきちんとあります．<br />
+  しかし，それらはいずれも（少なくとも私には）とても使いにくいのです．<br />
+  それは，<br />
+　
+<span class="style1">設定値（binと呼びます）を自在に変更できない  </span><br />
+  というものなのです．<br />
+  一度作成して，binを変更する場合には，再度一からやり直さなくてはなりません．<br />
+  しかも，エクセルの場合にはbinをきちんと作っておかないとだめなのです．<br />
+  そこで，私が単純なファイルを作りました．<br />
+  もし，必要でしたらぜひご利用ください．<br />
+  エクセルファイルですが，関数のみで，マクロも入っていませんので，セキュリティには引っかからないと思います．<br />
+　
+<a href="Histogram-Ishijima.xls">ダウンロードはこちらから</a>  <br />
+  ちょっとだけ説明すると，<br />
+　
+<span class="style2">Ａ列</span>：データ，1000行まで範囲にしています．それ以上のデータ数の場合には，隠れているH列の値を変更してください．  <br />
+　
+<span class="style2">C4，C5</span>：binの始まり，binの幅です．適当にいじってみてください．  <br />
+　
+<span class="style2">D,I列</span>：結果がここに表示されます．この結果を別の場所に移して利用するには，この部分をコピーして，”形式を選択して貼り付け”，”値”を指定してください． <br />
+隠してあった列も一緒に現れるので，両端以外を削除してお使いください．</p>
+<p><span class="style7"><a href="Chemical reactin-11.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"> <img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Chemical reactin-13.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

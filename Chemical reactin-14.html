@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style2 {
+	font-size: x-large;
+	color: #FF0000;
+}
+.style3 {
+	font-size: large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+.style7 {color: #000000; }
+.style8 {font-size: large; color: #FF0000; font-weight: bold; }
+-->
+</style>
+</head>
+
+<body>
+<h3 class="style1">・積算解析，その１</h3>
+<p>これらの問題を解決したのが，積算解析です．<br />
+  この解析方法は，私の先輩である樋口先生から教わりました．<br />
+  詳しくは，<br />
+　
+Kinetics of force generation by single kinesin molecules activated by laser photolysis of caged ATP<br />
+　Hideo Higuchi, Etsuko Muto, Yuichi Inoue, and Toshio Yanagida<br />
+　Proc Natl Acad Sci U S A. 1997 April 29; 94(9): 4395–4400.<br />
+  に書かれていますので，参考にしてみてください．</p>
+<p>私も，<br />
+  <span id="__firefox-findbar-search-id">　Kimura, Y., Toyoshima, N., Hirakawa, N., Okamoto, K.  &amp; <strong>Ishijima, A.</strong> (2003).<br />
+</span><span>　A kinetic  mechanism for the fast movement of Chara myosin. <em><br />
+  　Journal of Molecular Biology</em> <strong>328</strong>,  939-950.<br />
+で利用しています．</span></p>
+<p>この解析法を単純に説明すると，<br />
+  　
+  <span class="style2">生データを積算した結果をフィットする</span><br />
+  ということで，binの設定はありません．<br />
+  では具体的に説明してみましょう．<br />
+  単純な指数関数の減少の計算式は，<br />
+  <img src="Chemical reactin-05.gif" width="172" height="42" /><br />
+  となります．<br />
+  これを時間の短いものから積算していくと，<br />
+  <img src="Chemical reactin-55.gif" width="242" height="80" /><br />
+  というカーブとなります．</p>
+<p>  そして，<span class="style2">実際の実験データ</span>を，<br />
+  <span class="style8">　小さい順に並べる  <br />
+  　１，２と順番をつける  <br />
+  　実験データをＸ軸，１，２の順番をＹ軸でプロットする  </span><br />
+  とし，上記の計算式でフィットさせるのです．</p>
+<p>たとえば，蛍光色素1分子1分子の退色の時間が，</p>
+<table width="47" border="1">
+  <tr>
+    <td>0.50</td>
+  </tr>
+  <tr>
+    <td>0.37</td>
+  </tr>
+  <tr>
+    <td>1.25</td>
+  </tr>
+  <tr>
+    <td>0.14</td>
+  </tr>
+  <tr>
+    <td>0.95</td>
+  </tr>
+  <tr>
+    <td>0.66</td>
+  </tr>
+  <tr>
+    <td>0.25</td>
+  </tr>
+</table>
+<p>だとしたら，</p>
+<table width="97" border="1">
+  <tr>
+    <td width="38">0.14</td>
+    <td width="43">1</td>
+  </tr>
+  <tr>
+    <td>0.25</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>0.37</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>0.50</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>0.66</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>0.95</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>1.25</td>
+    <td>7</td>
+  </tr>
+</table>
+<p>と並べ替えて，さらに順番を振って，<br />
+　並べ替えた時間を，X<br />
+　振った順番を，Y<br />
+としてプロットするのです．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="Chemical reactin-14.jpg" width="471" height="333" /><br />
+  ここで重要なのは<span class="style5">時定数のみ</span>です．<br />
+  このフィットした値が求めたい時定数となります．<br />
+  このように，<br />
+  <span class="style3">　
+      binの設定によらないフィットが可能  <br />
+  　積分できる反応式ならどの式でも大丈夫  </span><br />
+  となります．</p>
+<p>しかも，上の式は単純な指数関数でしたが，積分できる関数なら，すべて適用可能です．</p>
+<p>次ページに続きます．</p>
+<p><span class="style7"><a href="Chemical reactin-13.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"> <img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Chemical reactin-15.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style2 {
+	font-size: large;
+	color: #FF0000;
+}
+.style7 {color: #000000; }
+-->
+</style>
+</head>
+
+<body>
+<h3 class="style1">・積算解析，その２</h3>
+<p>さて，これで二つの問題が解決しましたが，最後の問題，短いイベントのロス，はどうすればいいのでしょう？<br />
+まずは，短いイベントをロスしたデータで上記の手法でプロットしてみましょう．<br />
+すると，原点を通らない，ことがわかります．</p>
+<p><img src="Chemical reactin-15.jpg" width="470" height="333" /><br />
+  これは，最初のイベントをカウントしていないため，縦軸の設定が間違っている，ということですね．．．<br />
+  つまり，実際には原点はもっと下にあるのです．</p>
+<p><img src="Chemical reactin-16.jpg" width="515" height="349" /></p>
+<p>この分の補正は簡単にできるのです，つまり，<br />
+  <img src="Chemical reactin-56.gif" width="282" height="80" /><br />
+  という下駄，D，を加えたカーブでフィットすればいいのです．<br />
+  この手法により，<span class="style2">たとえ短いイベントをロスしたとしても正確に客観的に時定数を見積もることができます</span>．</p>
+<p><img src="Chemical reactin-17.jpg" width="470" height="336" /></p>
+<p>注意しなくてはならないことは，この手法は，<br />
+  
+  計算式ありき<br />
+  ですので，そこに主観が入る可能性があります．<br />
+  また，これは私の計算の問題ですが，<br />
+  
+  ガウス分布 <br />
+  のフィットをこれで試みようとしているのですが，<span class="style1">ガウス関数の積分の方法</span>がわかりません．<br />
+  どなたかご存じの方は教えてください．</p>
+<p>以上で化学反応論の説明は終わりです．<br />
+これ以外にもミカエリス・メンテンなどもありますが，まあいろんな教科書にもあるし．．．<br />
+おいおい追加していきます．</p>
+<p><span class="style7"><a href="Chemical reactin-14.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"> <img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="index.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>boltzman-105</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style10 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="130819.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">ボルツマン分布-05</h1>
+<p class="Large-Bold-Blue">水溶液中のポリスチレンビーズの分布</p>
+<p>水溶液中なので，<span class="Red-Bold">浮力</span>が働きます．<br />
+ですので，実効質量を考えなくてはなりません．</p>
+<p>\(\Large  \begin{align*} m' &amp;= m - V \rho_{0} \\<br />
+&amp;=  V \rho - V \rho_{0} \\<br />
+&amp;= \frac{4}{3} \pi r^{3} (\rho -  \rho_{0})  \end{align*} \)</p>
+<p>　m：物体の質量<br />
+　m'：物体の実効質量<br />
+　V：物体の体積<br />
+　ρ：物体の密度<br />
+　r：物体の半径<br />
+　ρ<sub>0</sub>：溶媒の密度</p>
+<p>です．<br />
+ビーズの分布も重力に依存しますので，底面との比較では，</p>
+<p>\(\Large E  = m' g h \)</p>
+<p>\(\Large  \frac{P_{i}}{P_{j}} = e^{- \frac{E_{i} - E_{j}}{k_{B} T}} \)</p>
+<p>\(\Large \frac{P_{h}}{P_{0}} = e^{- \frac{m' g h}{k_{B} T}} \)</p>
+<p>となります．ここで，<br />
+　P<sub>ｈ</sub>：高さ，ｈ，での確率<br />
+　P<sub>0</sub>：地面での確率<br />
+　m'：質量<br />
+　ｇ：重力加速度<br />
+　ｈ：高さ<br />
+となります．</p>
+<p>ここで，<br />
+　ρ：水の密度(1 g/cm<sup>3</sup>=10<sup>3</sup> kg/m3) <br />
+　ρ<sub>0</sub>：：ビーズの密度(1.05 g/cm<sup>3</sup>=1.05×10<sup>3</sup> kg/m3) <br />
+として計算すると，底面に比べて，ビーズの量が<span class="Red-Bold">半分</span>になるのは，</p>
+<p>\(\Large  \begin{align*} h &amp;= - ln \frac{1}{2} \cdot  \frac{k_{B} T}{m' g} \\<br />
+  &amp;= 
+  (-0.693) \frac{k_{B} T}{g} \frac{3}{ 4 \pi r^{3} ( \rho_{0} - \rho)} \\<br />
+&amp;=  -(-0.693) \frac{4.14 \times 10^{-21} [Nm]}{10 [m/s^{2}} \frac{3}{4 \pi r^{3} [m^{3}] \cdot 0.05 \times 10^{3} [kg/m^{3}]}  \end{align*} \)</p>
+<p>と言う計算をすればよいこととなります．式を見ればわかるように，ビーズの半径，ｒ，に依存しますので，いろいろな径のビーズを考えると，</p>
+<table width="250" border="1">
+  <tr>
+    <td>ビーズの半径</td>
+    <td>半分になる高さ</td>
+  </tr>
+  <tr>
+    <td>0.1 um</td>
+    <td>1.37 mm</td>
+  </tr>
+  <tr>
+    <td>0.5 um</td>
+    <td>11 um</td>
+  </tr>
+  <tr>
+    <td>1 um</td>
+    <td>1.37 um</td>
+  </tr>
+</table>
+<p>と普段よく使うビーズでも大きく変わることがわかりますね．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="boltzman-104.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+</body>
+</html>

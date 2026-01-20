@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>boltzman-101</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style10 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="130819.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">ボルツマン分布-01</h1>
+<p class="Large-Bold-Blue">&nbsp;</p>
+<p><span class="Large-Bold-Red">ボルツマン分布</span>，よく聞く言葉ですが，これは，<br />
+　<span class="Red-Bold">気体分子などの分子が取り得るエネルギー分布</span><br />
+を表し，その状態は，</p>
+<p><img src="boltzman-101.gif" width="146" height="136" /></p>
+<p>と指数関数となります．つまり，<br />
+　<span class="Blue-Bold">エネルギーが高い状態の分子は少ない</span><br />
+こととなります．<br />
+たとえば，<br />
+<span class="Blue">　大気中の分子の濃度分布は地面に低いほど高い（位置エネルギーが小さいので）<br />
+　大気中の分子の運動において，平均速度は指数関数分布となる</span><br />
+などがあります．</p>
+<p>では，どのように導出するのでしょうか？ひとつひとつ考えていきましょう．</p>
+<p>まずは<span class="Large-Bold-Red">ある系</span>を考えます．<br />
+<span class="Red-Bold">ある系を考える</span>，と言うことは，<span class="Red-Bold">それ以外の系は考えない</span>，と言うことです．<br />
+つまり，<span class="Red-Bold">ある系以外とのエネルギーのやりとりはない＝エネルギーはある系の中で保存している</span>，と言うことです．</p>
+<p><img src="boltzman-01.jpg" width="404" height="344" /></p>
+<p>これは，<br />
+  <span class="Large-Bold-Red">　ある小さい系，A，が存在する<br />
+　その周囲に熱浴，A'，が存在する</span><br />
+と言う系で，熱浴A'はとても大きいものと考えてください．つまり，<br />
+<span class="Large-Bold-Red">　A &lt;&lt; A'</span><br />
+と言うことになります．</p>
+<p>ここでの問いは，<br />
+  <span class="X-Large-RED">　系Aがあるエネルギー状態，E<sub>r</sub>，を持つ確率，P<sub>r</sub>，はどの程度か？</span><br />
+を考えていきましょう．</p>
+<p>まずは系のエネルギーを考えていきましょう．<br />
+閉鎖された系なので，<span class="Red-Bold">エネルギー保存則</span>が成り立ちます．<br />
+<span class="Large-Bold-Red">　E<sub>0</sub>＝E<sub>r</sub>＋E'</span><br />
+ここで，<br />
+　E<sub>0</sub>：系全体のエネルギー<br />
+　E<sub>r</sub>：系Aのエネルギー<br />
+　E'：熱浴A'のエネルギー<br />
+となります．</p>
+<p>熱浴A'のエネルギー，E'，はいろいろな状態をとることができます．その数を，<br />
+  <span class="Large-Bold-Red">　W(E') = W(E<sub>0</sub>-E<sub>r</sub>)</span><br />
+としましょう．その取り得る確率，P<sub>r</sub>，は，この状態の数に比例します．</p>
+<p><img src="boltzman-102.gif" width="200" height="80" /></p>
+<p>となります．当然のことながら，</p>
+<p><img src="boltzman-103.gif" width="84" height="40" /></p>
+<p>です．ここで，<span class="Large-Bold-Red">E<sub>0</sub> &gt;&gt; E<sub>r</sub></span>，であるので，状態の数，W，をテイラー展開します．<br />
+テイラー展開とは，</p>
+<p><img src="boltzman-104.gif" width="378" height="66" /></p>
+<p>です．さて，次がミソなのですが，<br />
+　テイラー展開するのは，状態の数，W，ではなく，状態の数，W，の対数<br />
+となるところです．第三項以降は無視して，</p>
+<p><img src="boltzman-105.gif" width="364" height="62" /></p>
+<p>となります．ここで，</p>
+<p><img src="boltzman-106.gif" width="158" height="62" /></p>
+<p>とおけば，</p>
+<p><img src="boltzman-107.gif" width="314" height="116" /></p>
+<p>とある熱浴のエネルギー状態，E'，を取り得る確率，を求めることができます．<br />
+規格化するために，</p>
+<p><img src="boltzman-108.gif" width="218" height="44" /></p>
+<p>であるので，</p>
+<p><img src="boltzman-109.gif" width="152" height="120" /></p>
+<p>となることがわかります．</p>
+<p>さて，<br />
+  <span class="Red-Bold">熱浴A'のエネルギー，E'，を取り得る確率，P<sub>r</sub></span>，は，そのまま<span class="Red-Bold">系Aが　E<sub>r</sub>（＝E<sub>0</sub>-E'），をとる確率</span>ですので，この，<span class="Red-Bold">Pr，が系Aがあるエネルギー状態，E<sub>r</sub>，を持つ確率，</span>となるわけです．</p>
+<p>と言うことで，その分布は指数関数分布となり，E<sub>r</sub>，が高くなるほど確率は低くなるわけです．</p>
+<p>では．．．．この<span class="X-Large-Bold-RED">β</span>とはどう考えたらよいのでしょう？</p>
+<p><img src="boltzman-106.gif" width="158" height="62" /></p>
+<p>次ページに行きます．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="Persistence Length-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="boltzman-102.html"><img src="R-arrow.png" alt="r" width="57" height="34" border="0" /></a></p>
+</body>
+</html>

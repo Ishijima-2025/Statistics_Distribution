@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style4 {font-size: large; color: #FF0000; font-weight: bold; }
+.style7 {color: #000000; }
+-->
+</style>
+</head>
+
+<body>
+<h3 class="style1">・ヒストグラムを用いた解析における問題点</h3>
+<p>これでデータの解析が可能となりましたが，<span class="style4">ヒストグラムには問題があります</span>．．．<br />
+  まずは，<span class="style4">binの範囲，そのものの値</span>です．<br />
+  たとえば，binの範囲を，<br />
+  0-1<br />
+  1-2<br />
+  2-3<br />
+  ...<br />
+  とします．<br />
+  すると，<br />
+  0.5は0-1，1.2は1-2の範囲に入ります．<br />
+  この際の表示は，アプリにもよりますが，<br />
+  
+  0,1,2...もしくは，1,2,3... <br />
+  となってしまいます．<br />
+  しかし，正しくはその範囲の平均値ですので，<br />
+  0.5, 1.5, 2.5...<br />
+  です．<br />
+  ここをちゃんとチェックしないとデータ自体が横軸にずれてしまいます．</p>
+<p>次の問題は<span class="style4">binの大きさの設定の仕方</span>です．<br />
+  一般的に適当にbinをいじって，一番見栄えのいい結果を採用するのが人の心理です．<br />
+  しかし，そうなると，”主観”が入ってしまうわけです．<br />
+  サイエンスはできるだけ客観的にデータを解析しなくてはならないのですが，ヒストグラムを作成すること自体に主観が入ってしまいます．<br />
+  データ量が多く，理想的な結果ならあまり問題はありませんが，実験結果は必ずしもそうではありません．<br />
+  ですから，<span class="style1">いかに客観的にデータを解析するかがサイエンスの鍵</span>となります．</p>
+<p>さらに問題が．．．<br />
+  それは<span class="style4">短いイベントを果たしてきちんと取得しているか，という問題</span>です．<br />
+  アンサンブル平均の場合，しかも単純な指数関数の減少の場合，非常に短い時間のイベントが大量に存在するはずです．<br />
+  しかし，装置の時間分解能の限界などから，それら短いイベントをとらえられない場合が少なくありません．<br />
+  するとどうなるでしょう？<br />
+  一次反応の場合，ヒストグラムをとると，短いイベントの取得数が減るため，実際には単純な指数関数の減少なのに，左側のイベントが少なくなり，あたかも真ん中にピークを持つカーブとなってしまいます．<br />
+  まるで，二つの指数関数の差のモデルのように．．．．</p>
+<p><img src="Chemical reactin-13.jpg" width="464" height="350" /></p>
+<p>では，これらの結構シリアスな問題をどう改善したらよいでしょう？</p>
+<p class="style1"><span class="style7"><a href="Chemical reactin-12.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"> <img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Chemical reactin-14.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NND-01</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-Blue"><span class="X-Large-Bold-RED">最近接長 (Nearest Neighbor Distance)-01</span></p>
+<p>最近接長とは，</p>
+<p class="Large-Bold-Red">ランダムに分布された粒子同士において，一番近い粒子との距離の平均値</p>
+<p>となります．</p>
+<p>つまり，ぱらぱらとランダムに粒子をばらまいたときに，一番近い粒子との距離はどのくらい？というものです．</p>
+<p><span class="X-Large-RED">ランダムな現象</span>なので，確率的振る舞いとなりますので，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Poisson-02.html">ポアソン分布</a>，から考えていきましょう．</p>
+<p>今回は，<a href="http://www.geocities.jp/ikuro_kotaro/koramu/wigner.htm" target="_blank">このサイト</a>，を参考にさせていただきました．</p>
+<p>このときの平均の密度を，ρ，とした場合，ある面積，S，に存在する粒子の数の平均値は，</p>
+<p><img src="NND-01.jpg" width="177" height="139" /></p>
+<p> \(\Large \lambda = S\cdot\rho\) </p>
+<p>となります．ポアソン分布に従うとしたので，その値の分布は，以下の式で表すことができます．</p>
+<p>\(\Large P(x) = \frac{(S\cdot\rho)^x}{x!}\cdot e^{-S\cdot\rho}\) </p>
+<p>さて，<span class="X-Large-Blue">最近接距離(Nearest Neighbor Distance)</span>の定義は， </p>
+<p class="Large-Bold-Red">  ランダムに分布された粒子同士において，一番近い粒子との距離の平均値</p>
+<p> とあるので，以下の条件を満足させる必要がある．</p>
+<p> <span class="Large-Bold-Blue">１．	ある点から半径ｒの円内には全く他の点が存在しない </span></p>
+<p class="Large-Bold-Blue">２．	半径ｒとｒ＋ｄｒで区切られた微小な環状面積に少なくとも1つは粒子が存在する．</p>
+<p>となります．</p>
+<p><img src="NND-02.jpg" width="220" height="215" /></p>
+<p>これらの条件について考えていきましょう．</p>
+<p><span class="style7"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="NND-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

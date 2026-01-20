@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NND-02</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-Blue"><span class="X-Large-Bold-RED">最近接長 (Nearest Neighbor Distance)-02</span></p>
+<p class="Large-Bold-Blue">１．	ある点から半径ｒの円内には全く他の点が存在しない </p>
+<p>について考えていきましょう．</p>
+<p>全く粒子が存在しないのですから，ポアソン分布に従うとすると，</p>
+<p>\(\Large x =0\) </p>
+<p>となります．また，面積Sは，</p>
+<p>\(\Large S = \pi \cdot r^2\) </p>
+<p>この条件で存在確率を考えると，0の階乗は１となるので，</p>
+<p>\(\Large P(0) = \frac{(\pi \cdot r^2\cdot\rho)^0}{0!}\cdot e^{-\pi \cdot r^2\cdot\rho}\) </p>
+<p>\(\Large \hspace{ 35pt } = e^{-\pi \cdot r^2\cdot\rho}\)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">２．	半径ｒとｒ＋ｄｒで区切られた微小な環状面積に少なくとも1つは粒子が存在する．</p>
+<p>について考えていきましょう．</p>
+<p>すくなくとも1個，ということは，０でなければ何個でもいい，ということなります．<br />
+つまり，全体から０である確率を引けばいい，ということです．</p>
+<p>ここで，環状面積は，r&gt;&gt;dr，から以下のように近似できます． </p>
+<p>\(\Large \pi\cdot (r+dr)^2 - \pi \cdot r^2 = \pi \cdot (r^2+2r \cdot dr + dr^2 - r^2)\) </p>
+<p>\(\Large \hspace{ 35pt } \cong 2 \cdot \pi \cdot r \cdot dr\)</p>
+<p>従って，</p>
+<p>\(\Large P(\neq 0) = 1-P(0) = 1- e^{-2 \cdot \pi  \rho \cdot r \cdot dr}\)</p>
+<p>さらに近似式を使い，</p>
+<p>\(\Large e^x = 1 + x + \frac{x^2}{2!} + \cdot \cdot \cdot \)</p>
+<p>\(\Large 1-e^x \cong -x\)</p>
+<p>なので，</p>
+<p>\(\Large P(\neq 0) = 1-P(0) =  2 \cdot \pi \cdot  \rho \cdot r \cdot dr\)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">１．，２．の条件を満たすためには，</p>
+<p>両方の条件を満たすためには，両者の積で表すことになるので，</p>
+<p>\(\Large P(r) dr  =  2 \cdot \pi \cdot r \cdot \rho \cdot dr \cdot e^{-\pi \cdot r^2\cdot\rho}\)</p>
+<p>となります．</p>
+<p>ここで，</p>
+<p>\(\Large \beta^2 \equiv \frac{1}{\pi \rho}\)</p>
+<p>とおくと，</p>
+<p>\(\Large P(r)  =  2 \cdot \pi \cdot r \cdot \rho \cdot e^{-\pi \cdot r^2\cdot\rho}\)</p>
+<p>\(\Large \hspace{ 45pt } = \frac{2}{\beta^2} \cdot r \cdot  e^{-\pi \cdot r^2\cdot\rho}\)</p>
+<p>となり，これは，<a href="https://ja.wikipedia.org/wiki/レイリー分布" target="_blank">レイリー分布</a>，となります．</p>
+<p>&nbsp;</p>
+<p> つぎに<span class="X-Large-Bold-RED">平均</span>がいくつになるかについて考えていきましょう．</p>
+<p><span class="style7"><a href="NND-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="NND-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

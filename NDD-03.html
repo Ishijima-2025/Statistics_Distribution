@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NND-02</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-Blue"><span class="X-Large-Bold-RED">最近接長 (Nearest Neighbor Distance)-03-平均</span></p>
+<p>ｒの平均値はｒを０から∞までの間，確率の積とともに積分すればよいので，</p>
+<p>全く粒子が存在しないのですから，ポアソン分布に従うとすると，</p>
+<p>\(\Large &lt;r&gt; = \int_0^\infty r \cdot P(r) dr =  \int_0^\infty r \cdot 2 \cdot \pi \cdot r \cdot \rho \cdot e^{-\pi \cdot r^2\cdot\rho} dr\) </p>
+<p>\(\Large \hspace{ 35pt } = 2 \cdot \pi  \cdot \rho   \cdot \int_0^\infty r^2 \cdot  e^{-\pi \cdot \cdot\rho r^2} dr\)</p>
+<p>となります．</p>
+<p>ここで，積分公式を使い，</p>
+<p>\(\Large  \int_0^\infty x^{2n} \cdot e^{-a \cdot x^2} dx = \frac{(2n-1)(2n-3) \cdot \cdot \cdot 3 \cdot1}{2^{n+1}} \sqrt{\frac{\pi}{a^{2n+1}}} \hspace{30 pt}(a&gt;0)\) </p>
+<p>今回は，</p>
+<p>\(\Large n=1\)</p>
+<p>\(\Large a=\pi \cdot \rho\)</p>
+<p>となるので，</p>
+<p>\(\Large  \int_0^\infty x^2 \cdot e^{-a \cdot x^2} dx = \frac{1}{2^2} \sqrt{\frac{\pi}{a^3}} \) </p>
+<p>であり，</p>
+<p>\(\Large &lt;r&gt; = 2 \cdot \pi  \cdot \rho   \cdot \int_0^\infty r^2 \cdot  e^{-\pi \cdot \cdot\rho\cdot r^2} dr\)</p>
+<p>\(\Large \hspace{ 37pt } = 2 \cdot \pi  \cdot \rho   \cdot \frac{1}{4} \sqrt{\frac{\pi}{(\pi \cdot \rho)^3}}\)</p>
+<p>\(\Large \hspace{ 37pt } = \sqrt{\frac{\pi^2 \cdot \rho^2}{4} \frac{\pi}{(\pi \cdot \rho)^3}}\)</p>
+<p>\(\Large \hspace{ 37pt } = \sqrt{\frac{1}{4 \cdot \rho}}\)</p>
+<p>\(\Large \hspace{ 37pt } = \frac{1}{2} \sqrt{\frac{1}{\rho}}\)</p>
+<p>と結論づけることができました．</p>
+<p><span class="style7"><a href="NND-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

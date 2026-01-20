@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>equipartition-02</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style10 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="130819.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">ボルツマン分布からエネルギー等分配則を求めてみる-01</h1>
+<p class="Large-Bold-Blue">&nbsp;</p>
+<p>さて，気体の分子の運動と理想気体の状態方程式からエネルギー等分配則を求めましたが，<span class="Large-Bold-Red">分子の運動エネルギーのボルツマン分布から</span>求めてみましょう．</p>
+<p>これは，<br />
+　<a href="http://www.kinokuniya.co.jp/f/dsg-01-9784588021206" target="_blank">生物学におけるランダムウォーク</a><br />
+の日本語版のp.73にさらりと書かれているのですが，実際に計算してみましょう．</p>
+<p>x軸方向に速度ｖで動く質量ｍの粒子は等分配則により，平均&lt;v<sup>2</sup>&gt;で移動し，その関係は，</p>
+<p><img src="equipartition-21.gif" width="166" height="62" /></p>
+<p>となります．<br />
+この速度の二乗の平均値は，ある速度とその確率，P，で計算できますので，</p>
+<p><img src="equipartition-22.gif" width="192" height="80" /></p>
+<p>となります．<span class="Red-Bold">この確率，P，がボルツマン分布に従う</span>ので，</p>
+<p><img src="equipartition-23.gif" width="308" height="180" /></p>
+<p>となります．<br />
+<a href="http://www.kinokuniya.co.jp/f/dsg-01-9784588021206" target="_blank">生物学におけるランダムウォーク</a>，では，さらりと．．．”定積分の公式から．．”とあるのですが，さて．．．．結構難しい積分です．<br />
+分母は誤差関数から何とか求めることができるのですが（<a href="equipartition-02-1.html">ここ</a>に記載），分子が．．．．</p>
+<p>でも．．ふと気づきました．．．．これって<span class="X-Large-Bold-RED">正規分布じゃないか</span>．．．．とつまり，</p>
+<p><img src="equipartition-31.gif" width="212" height="80" /></p>
+<p>とよく似ていますよね，これならある程度答がわかっていますので，これを用いて計算を行ってみましょう．</p>
+<p>まずは，簡単な<span class="Large-Bold-Blue">分母</span>から．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="equipartition.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="equipartition-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" border="0" /></a></p>
+</body>
+</html>

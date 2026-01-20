@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>successive_reaction</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">逐次反応における自己相関関数について-04</p>
+<p class="Large-Bold-Red"> コンピュータシミュレーションとの比較</p>
+<p>実際に，Labviewで計算してみました．その結果が，</p>
+<p><img src="successive reaction-02.png" width="588" height="429" /></p>
+<p>となりました．（k=0.1，n=100）</p>
+<p>ｒ＝１では指数関数の減少となり，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Autocorrelation-01.html">単純な化学反応</a>，の結果と一致します．</p>
+<p>ｒ＝2回以上では振動が見られます． </p>
+<p>&nbsp;</p>
+<p>実際にランダム関数から２状態の時間トレースを作成し，自己相関を取ると，ｒ＝1とｒ＝2で以下の図のようになりました．</p>
+<p><img src="successive reaction-03.png" width="436" height="268" /></p>
+<p>白（ｒ＝１），赤（ｒ＝２）です．ｒ＝１で単調減少，ｒ＝２で振動していることがわかりますね．</p>
+<p>この際の持続時間のヒストグラムが以下のようになります.</p>
+<p><img src="successive reaction-04.png" width="342" height="336" />　<img src="successive reaction-05.png" width="342" height="336" /></p>
+<p>　　　　　　　　　　　　　白（ｒ＝１）　　　　　　　　　　　　　　　　　　　　　　　　　　赤（ｒ＝２）</p>
+<p>この結果は，,<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Reaction-first-01.html">一次反応</a>，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Chemical%20reactin-17.html">逐次反応</a>，の計算結果と一致しますね．</p>
+<p>&nbsp;</p>
+<p>実際の実験結果</p>
+<p>実際の実験結果は，</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3149276/" target="_blank">Coordinated Reversal of Flagellar Motors on a Single Escherichia coli Cell Shun Terasawa, Hajime Fukuoka, Yuichi Inoue, Takashi Sagawa, Hiroto Takahashi, and Akihiko Ishijima<br />
+Biophysical Journal, 2011</a></p>
+<p>の図に記載されていますが，そのまま掲載するのは著作権の関係でややこしいので，リンクだけ貼っておきます．</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3149276/figure/fig2/" target="_blank">Fig, 2D</a></p>
+<p>このように相関に若干振動が見られます．これは自己相関ではなく，２つのモータ－の相互相関なので話はそれほど単純ではありませんが，モータの特性と化学反応を理解する上では重要ですね．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="successive_reaction-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

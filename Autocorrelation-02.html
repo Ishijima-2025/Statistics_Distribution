@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Autocorrelation</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ランダム過程における自己相関関数について-02</p>
+<p class="Large-Bold-Red">自己相関，<span class="X-Large-Bold-RED">a=1, d=0</span>の場合</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>ここで，０，１の場合を考えます．<br />
+これは，アクトミオシンの力学過程やイオンチャネルの開閉などの場合です．つまり，</p>
+<p> 自己相関関数，，&lt;f(t)f(t+τ)&gt;，は 　f(t)がA状態，かつ，f(t+τ)がA状態 のみに値を持ちます</p>
+<p> つまり，全ページの式において，初期条件，t=0, A=1，となります．</p>
+<p>\(\Large  \frac{dA[t]}{dt} = \frac{P_0}{\tau} - \frac{1}{\tau} A \)</p>
+<p>の微分方程式を解けばよいのです．<br />
+ここでは，定数項を０として扱い，その後に計算で出てきた比例定数を変数として扱う方法で解いてみましょう．</p>
+<p>定数項を０として，</p>
+<p>\(\Large  \frac{dA[t]}{dt} = - \frac{1}{\tau}  \)</p>
+<p>\(\Large A[t] = A_0 \cdot exp \left( - \frac{t}{ \tau} \right)  \)</p>
+<p>比例定数，A<sub>0</sub>，を変数として計算すると，</p>
+<p>\(\Large \frac{dA[t]}{dt} = A_0' \cdot exp \left( - \frac{t}{ \tau} \right) -\frac{A_0}{ \tau} \cdot exp \left( - \frac{t}{ \tau} \right) = \frac{P_0}{\tau} - \frac{1}{\tau} A[t] \)</p>
+<p>\(\Large A_0' \cdot exp \left( - \frac{t}{ \tau} \right) = \frac{P_0}{\tau}  \)</p>
+<p>\(\Large A_0' =  \frac{P_0}{\tau}  \cdot exp \left(  \frac{t}{ \tau} \right) \)</p>
+<p>\(\Large A_0 = P_0 \cdot exp \left(  \frac{t}{ \tau} \right) + D  \)</p>
+<p>\(\Large A = \left[ P_0 \cdot exp \left(  \frac{t}{ \tau} \right) + D \right] \cdot  exp \left( - \frac{t}{ \tau} \right) \)</p>
+<p>\(\Large \begin{eqnarray} A &amp;=&amp; \left[ P_0 \cdot exp \left(  \frac{t}{ \tau} \right) + D \right] \cdot  exp \left( - \frac{t}{ \tau} \right) \\<br />
+&amp;=&amp; P_0 + D \cdot exp \left(  - \frac{t}{ \tau} \right) \\<br />
+\end{eqnarray}　\)</p>
+<p>t=0, A=1から，</p>
+<p>\(\Large 1 = P_0  + D  \)</p>
+<p>\(\Large D = 1 - P_0  \)</p>
+<p>\(\Large A = P_0 + ( 1- P_0) \cdot exp \left(  \frac{t}{ \tau} \right) \)</p>
+<p>となる．</p>
+<p>　f(t)がA状態　：　P0 </p>
+<p>　f(t+τ)がA状態　：上記式 なので， </p>
+<p>\(\Large \begin{eqnarray}<br />
+  &lt;f(t) f(t+ \tau)&gt;<br /> 
+  &amp;=&amp; P_0 \left[ P_0 + ( 1- P_0) \cdot exp \left( - \frac{t}{ \tau} \right) \right] \\<br />
+&amp;=&amp;  P_0^2 + P_0 \cdot ( 1- P_0) \cdot exp \left( -  \frac{t}{ \tau} \right) \\<br />
+\end{eqnarray}　\)</p>
+<p>となります．つまり，</p>
+<p><img src="Autocorrelation-02.png" width="496" height="305" /></p>
+<p>\(\Large Peak : \hspace{ 18pt } P_0^2 + P_0 \cdot ( 1- P_0) = P_0 \)</p>
+<p>\(\Large Base : \hspace{ 18pt } P_0^2 \)</p>
+<p>\(\Large \tau  : \hspace{ 18pt } \frac{1}{k_{+} + k_{-}} \)</p>
+<p>のような<span class="Large-Bold-Blue">単調な指数関数</span>の減少となります．</p>
+<p>もし，</p>
+<p>　k<sub>+</sub> = 3 k<sub>-</sub></p>
+<p>の場合，<strong>P<sub>0</sub> = 0.75</strong>，となります．</p>
+<p>\(\Large \tau  = 4 \cdot k_- = \frac{4}{3} \cdot k_+ \)</p>
+<p>\(\Large t=0 \hspace{ 18pt } &lt;f(t) f(t+ \tau)&gt;=0.75 \)</p>
+<p>\(\Large t= \infty \hspace{ 18pt } &lt;f(t) f(t+ \tau)&gt;=0.56 \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>次ページに，A状態（値a）とD状態（値ｄ）のa, d,　の値を変えて計算してみましょう．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Autocorrelation-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Autocorrelation-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

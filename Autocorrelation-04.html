@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Autocorrelation</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ランダム過程における自己相関関数について-04</p>
+<p class="Large-Bold-Red">自己相関，<span class="X-Large-Bold-RED">a=a, d=d</span>の場合</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>次に，a=a, d=dの場合の一般解を求めます．この場合の係数は，</p>
+<table width="200" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>係数</td>
+    <td>f(t)</td>
+  </tr>
+  <tr>
+    <td height="28">A→A</td>
+    <td>a<sup>2</sup></td>
+    <td>P<sub>0</sub></td>
+  </tr>
+  <tr>
+    <td height="29">A→D</td>
+    <td>ad</td>
+    <td>P<sub>0</sub></td>
+  </tr>
+  <tr>
+    <td height="30">D→A</td>
+    <td>d<sup>2</sup></td>
+    <td>1-P<sub>0</sub></td>
+  </tr>
+  <tr>
+    <td height="29">D→D</td>
+    <td>ad</td>
+    <td>1-P<sub>0</sub></td>
+  </tr>
+</table>
+<p>\(\Large A_{A \rightarrow A} : a^2 \cdot P_0 \left[P_0 + ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \right] = a^2 \cdot P_0^2 + a^2 \cdot P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right)\)</p>
+<p>\(\Large A_{A \rightarrow D} : ad \cdot  P_0 \cdot (1-P_0) \cdot \left[ 1 - exp \left(  - \frac{t}{ \tau} \right) \right] = ad \cdot P_0 \cdot (1-P_0) - ad \cdot P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \)</p>
+<p>\(\Large A_{D \rightarrow A}  : ad \cdot ( 1 - P_0)  \cdot P_0 \cdot \left[ 1 - exp \left(  \frac{t}{ \tau} \right) \right] = ad \cdot P_0 \cdot (1-P_0) - ad \cdot P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \)</p>
+<p>\(\Large A_{D \rightarrow D}  : d^2 \cdot ( 1 - P_0)  \cdot \left[ 1 - P_0 \cdot \left( 1 - exp \left(  \frac{t}{ \tau} \right) \right) \right] =  d^2 \cdot (1-P_0)^2 + d^2 \cdot P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \)</p>
+<p>ここで，指数がかかっていない項の合計は，</p>
+<p>\(\Large a^2 \cdot P_0^2 + 2 \cdot ad\cdot P_0 \cdot ( 1 - P_0 ) + d^2 \cdot ( 1 - P_0 )^2 = \left[ a \cdot P_0 + d \cdot (1 - P_0  ) \right]^2 \)</p>
+<p>となります．</p>
+<p> 指数がかかっている項は，</p>
+<p>\(\Large (a^2 - 2 \cdot ad + d^2) \cdot P_0 \cdot  ( 1 - P_0 ) = (a - d)^2 \cdot P_0 \cdot  ( 1 - P_0 ) \)</p>
+<p>となりますので，</p>
+<p>\(\Large &lt;f(t) f(t+ \tau)&gt; = \left[ a \cdot P_0 + d \cdot (1 - P_0  ) \right]^2 + (a - d)^2 \cdot P_0 \cdot  ( 1 - P_0 )　\cdot exp \left(  - \frac{t}{ \tau} \right) \) </p>
+<p>となります．まとめると，</p>
+<p class="Large-Bold-Red">　単純なON・OFF，Attach・Detachなどの遷移の場合には，自己相関は単純な<span class="X-Large-Bold-RED">指数関数の減少</span>となる</p>
+<p class="Large-Bold-Red">　τ=無限大の場合の値はそのトレースの<span class="X-Large-Bold-RED">平均の２乗値</span>となる</p>
+<p>事がわかります．</p>
+<p>では，この波形のパワースペクトルはどうなるのでしょう？</p>
+<p>これは，以前に記しました，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/power-03.html">トラップされたビーズの運動方程式の自己相関関数</a>が指数関数となり，今回と全く同じなのでこれを用いれば，</p>
+<p>　<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/power-08.html">ローレンツ型</a></p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>では，単純な一次反応で示されるような反応ではなく，逐次反応の場合にはどうなるのでしょう？</p>
+<p>次ページ以降に説明します．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Autocorrelation-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Autocorrelation-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>successive_reaction</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">逐次反応における自己相関関数について-01</p>
+<p class="Large-Bold-Red">逐次反応</p>
+<p class="Large-Bold-Red"><img src="successive reaction-01.png" width="669" height="202" /></p>
+<p>図のように，<span class="Red-Bold">A状態（値a）</span>と<span class="Red-Bold">D状態（値ｄ）</span>をランダムに遷移する過程を考えていきましょう．</p>
+<p>この過程では，A状態からD状態に遷移する（or D状態からA状態に遷移する）過程において単純な一次反応ではなく，複数の過程がある場合を考えます．</p>
+<p>このときの反応式は，</p>
+<p>\(\hspace{ 30pt }  k \hspace{ 42pt }  k  \hspace{ 44pt }  k \\[-5 pt] \Large  A_0 \longrightarrow A_1 \longrightarrow \cdots \longrightarrow   A_n \)</p>
+<p>と表すことができます． この関数，f(t)の自己相関関数，<span class="Large-Bold-Blue">&lt;f(t)f(t+τ)&gt;</span>，がどのようになるかを考えます．</p>
+<p>さて，この問題を解いてくれた論文が，</p>
+<p><a href="https://doi.org/10.1016/S0006-3495(98)74038-X" target="_blank">Autocorrelation Function and Power Spectrum of Two-State Random Processes Used in Neurite<br />
+  David J.Odde and Helen M.Buettner<br />
+Biophysical Journal 1998</a></p>
+<p>です．そもそもは，</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/16486999" target="_blank">Hidden Stochastic Nature of a Single Bacterial Motor<br />
+  Korobkova EA, Emonet T, Park H, Cluzel P.<br />
+Phys Rev Lett. 2006</a></p>
+<p>を読んでいたのですが，パワースペクトルを計算するときにOddeの論文を引用していました．</p>
+<p>このOddeの論文での計算の仕方は独特で，最初は全然わかりませんでしたが，読んでいるうちになかなか面白い手法で解いていることに驚きました．</p>
+<p>なかなか頭の良い人がいるものです．．．．</p>
+<p>今回は，<span class="Red-Bold">この波形の自己相関関数がどの様になるか？</span>，を計算していきます．</p>
+<p>&nbsp;</p>
+<p class="X-Large-Bold-RED">ポアソン分布</p>
+<p> まずは，反応式を見てみましょう． ここでは，Oddeの論文に従って，記号を記します．</p>
+<p>\(\hspace{ 30pt }  \nu \hspace{ 42pt }  \nu  \hspace{ 44pt }  \nu \\[-5 pt] \Large  A_0 \longrightarrow A_1 \longrightarrow \cdots \longrightarrow   A_k \)</p>
+<p>ここでは，すべての反応速度は等しくてvとしてkステップ起こる逐次反応を考えます．</p>
+<p>これは，以前説明した<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Chemical%20reactin-05.html">逐次反応</a>，とくに<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/gamma-01.html">ガンマ分布</a>となります．</p>
+<p>さて，各反応はランダムに起こりますから，ある一定の時間で起こる確率は<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Poisson-01.html">ポアソン分布</a>に従います．</p>
+<p>これがk回起こるのですから，</p>
+<p>\(\Large  P_k = \frac{(\nu \tau)^k}{k!} e^{- \nu \tau}  \)</p>
+<p>となります．</p>
+<p>ポアソン分布の場合には各イベントがランダムに起こるので，同じ時間に起こっても問題ないですが，逐次反応の場合には連続的（途切れ途切れでも良い）に起こらないとまずいと思います．</p>
+<p>しかし，vτがとても小さい値と考えていそうなので，重なって起こる可能性を無視しているのだろうと想像します．</p>
+<p>&nbsp;</p>
+<p>次ページに，進みます．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Autocorrelation-04.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="successive_reaction-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

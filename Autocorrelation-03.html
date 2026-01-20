@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Autocorrelation</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ランダム過程における自己相関関数について-03</p>
+<p class="Large-Bold-Red">自己相関，<span class="X-Large-Bold-RED">a=1, d=-1</span>の場合</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>次に，1, -1の場合を考えます．<br />
+これは，モータの逆回転，順回転を1, -1とした場合に相当します．<br />
+前回の条件では，値を持つ場合は１通りでしたが，今回は，4通り存在します． つまり，</p>
+<p>	　<span class="Blue-Bold">A→A</span>　：　1✕１ = 1<br />
+　<span class="Blue-Bold">A→D</span>　：　１✕(-1) = -1<br />
+　<span class="Blue-Bold">D→D</span>　：　-1✕(-1) = 1<br />
+　<span class="Blue-Bold">D→A</span>　：　-1✕1 = -1</p>
+<p>それぞれの場合について計算し，合計する必要があります．</p>
+<p class="Large-Bold-Red">・A→A</p>
+<p>t=0, A=1に相当しますので， 先の計算と同様に， </p>
+<p>\(\Large A_{A \rightarrow A} = P_0 + ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・A→D</p>
+<p>この場合は，A状態からは，AかDにしか遷移しないので， 1-(A→A) を計算すればよい． </p>
+<p>\(\Large \begin{eqnarray} A_{A \rightarrow D}  &amp;=&amp; 1 - \left[ P_0 + ( 1- P_0) \cdot exp \left( - \frac{t}{ \tau} \right) \right] \\<br />
+&amp;=&amp; (1 - P_0) \cdot \left[ 1 - exp \left(  - \frac{t}{ \tau} \right) \right] \\<br />
+\end{eqnarray}　\)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Red">・D
+→A</span></p>
+<p>この場合には，初期条件を，t=0, A=0として計算すればよいので，</p>
+<p>\(\Large  A = P_0 + D \cdot exp \left(  - \frac{t}{ \tau} \right) \)</p>
+<p>\(\Large 0 = P_0  + D  \)</p>
+<p>\(\Large D = - P_0  \)</p>
+<p>\(\Large A_{D \rightarrow A}  = P_0  \cdot \left[ 1 - exp \left(  \frac{t}{ \tau} \right) \right] \)</p>
+<p>となる．</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Red">・D
+→D</span></p>
+<p>A→D，の場合と同様に，1-(D→A) を計算すればよい． </p>
+<p>\(\Large A_{D \rightarrow D}  = 1　-　P_0  \cdot \left[ 1 - exp \left(  \frac{t}{ \tau} \right) \right] \)</p>
+<p>&nbsp;</p>
+<p> 自己相関関数，それぞれの場合に以下の係数を掛ければよい．</p>
+<table width="200" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>係数</td>
+    <td>f(t)</td>
+  </tr>
+  <tr>
+    <td height="28">A→A</td>
+    <td>1</td>
+    <td>P<sub>0</sub></td>
+  </tr>
+  <tr>
+    <td height="29">A→D</td>
+    <td>-1</td>
+    <td>P<sub>0</sub></td>
+  </tr>
+  <tr>
+    <td height="30">D→A</td>
+    <td>-1</td>
+    <td>1-P<sub>0</sub></td>
+  </tr>
+  <tr>
+    <td height="29">D→D</td>
+    <td>1</td>
+    <td>1-P<sub>0</sub></td>
+  </tr>
+</table>
+<p>\(\Large A_{A \rightarrow A} : P_0 \left[P_0 + ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \right] = P_0^2 + P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right)\)</p>
+<p>\(\Large A_{A \rightarrow D} : - P_0 \cdot (1-P_0) \cdot \left[ 1 - exp \left(  - \frac{t}{ \tau} \right) \right] = - P_0 \cdot (1-P_0) + P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \)</p>
+<p>\(\Large A_{D \rightarrow A}  :-( 1 - P_0)  \cdot P_0 \cdot \left[ 1 - exp \left(  \frac{t}{ \tau} \right) \right] = - P_0 \cdot (1-P_0) + P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \)</p>
+<p>\(\Large A_{D \rightarrow D}  : ( 1 - P_0)  \cdot \left[ 1 - P_0 \cdot \left( 1 - exp \left(  \frac{t}{ \tau} \right) \right) \right] =  (1-P_0)^2 + P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \)</p>
+<p>ここで，指数がかかっていない項の合計は，</p>
+<p>\(\Large P_0^2 -2 \cdot P_0 \cdot ( 1 - P_0 ) + ( 1 - P_0 )^2 = (2 \cdot P_0 - 1 )^2 \)</p>
+<p>と簡略化できます． 指数がかかっている項はすべて同じなので，結果， </p>
+<p>\(\Large &lt;f(t) f(t+ \tau)&gt; = (2 \cdot P_0 - 1 )^2 + 4 \cdot P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \) </p>
+<p>となります．つまり，</p>
+<p><img src="Autocorrelation-02.png" width="496" height="305" /></p>
+<p>\(\Large Peak : \hspace{ 18pt } ( 2 \cdot P_0 - 1 )^2+ 4 \cdot P_0 \cdot ( 1- P_0) = 1 \)</p>
+<p>\(\Large Base : \hspace{ 18pt }  ( 2 \cdot P_0 - 1 )^2 \)</p>
+<p>\(\Large \tau  : \hspace{ 18pt } \frac{1}{k_{+} + k_{-}} \)</p>
+<p>つまり，t=0においては必ず１となります．</p>
+<p>&nbsp;</p>
+<p>もし，</p>
+<p>　<span class="Red-Bold">k<sub>+</sub> =  k<sub>-</sub></span></p>
+<p>の場合，<strong>P<sub>0</sub> = 0.5</strong>，となります．また，</p>
+<p>\(\Large &lt;f(t) f(t+ \tau)&gt; = (2 \cdot P_0 - 1 )^2 + 4 \cdot P_0 \cdot ( 1- P_0) \cdot exp \left(  - \frac{t}{ \tau} \right) \) </p>
+<p>の第一項が０となります．</p>
+<p>\(\Large \tau  = 4 \cdot k_- = \frac{4}{3} \cdot k_+ \)</p>
+<p>\(\Large t=0 \hspace{ 18pt } &lt;f(t) f(t+ \tau)&gt;=1 \)</p>
+<p>\(\Large t= \infty \hspace{ 18pt } &lt;f(t) f(t+ \tau)&gt;=0 \)</p>
+<p>となります．</p>
+<p>もし，</p>
+<p>　<span class="Red-Bold">k<sub>+</sub> =  3k<sub>-</sub></span></p>
+<p>の場合，<strong>P<sub>0</sub> = 0.75</strong>，となります．</p>
+<p>\(\Large t=0 \hspace{ 18pt } &lt;f(t) f(t+ \tau)&gt;=1 \)</p>
+<p>\(\Large t= \infty \hspace{ 18pt } &lt;f(t) f(t+ \tau)&gt;=0.25 \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>次ページに，A状態（値a）とD状態（値ｄ）のa, d,　の一般解を計算してみましょう．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Autocorrelation-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Autocorrelation-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

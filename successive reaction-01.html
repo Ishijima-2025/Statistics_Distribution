@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Autocorrelation</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">逐次反応における自己相関関数について-01</p>
+<p class="Large-Bold-Red">逐次反応</p>
+<p class="Large-Bold-Red"><img src="successive reaction-01.png" width="669" height="202" /></p>
+<p>図のように，<span class="Red-Bold">A状態（値a）</span>と<span class="Red-Bold">D状態（値ｄ）</span>をランダムに遷移する過程を考えていきましょう．</p>
+<p>この過程では，A状態からD状態に遷移する（or D状態からA状態に遷移する）過程において単純な一次反応ではなく，複数の過程がある場合を考えます．</p>
+<p>このときの反応式は，</p>
+<p>\(\hspace{ 18pt }  k \hspace{ 24pt }  k \[-5 pt] \Large  A_0 \rightleftharpoons A_1 \rightleftharpoons \cdots \rightleftharpoons   A_n \)</p>
+<p>と表すことができる． この関数，f(t)の自己相関関数，<span class="Large-Bold-Blue">&lt;f(t)f(t+τ)&gt;</span>，がどのようになるかを考えます． </p>
+<p>今回は，<span class="Red-Bold">この波形の自己相関関数がどの様になるか？</span>，を計算していきます．</p>
+<p>&nbsp;</p>
+<p class="X-Large-Bold-RED">反応式</p>
+<p> まずは，反応式を解いてみましょう． </p>
+<p>\(\hspace{ 18pt }  k_{-} \\[-5 pt] \Large  A \rightleftharpoons D \\[-5 pt] \hspace{ 18pt }  k_{+} \)</p>
+<p>この反応式は以下の微分方程式で表すことができます． </p>
+<p>\(\Large  \frac{dA[t]}{dt} = -k_{-} \cdot A[t] + k_{+} \cdot D[t] \)</p>
+<p>ここで，</p>
+<p>\(\Large   A[t] +  D[t] = 1\)</p>
+<p>とすると，</p>
+<p>\(\Large  \frac{dA[t]}{dt} = -k_{-} \cdot A[t] + k_{+} \cdot （１-A[t]) \)</p>
+<p>定常状態を考えると，</p>
+<p>\(\Large  \frac{dA[t]}{dt} = 0 \)</p>
+<p>\(\Large  0 = -k_{-} \cdot A[t] + k_{+} \cdot （１-A[t]) \)</p>
+<p>\(\Large  (k_{+} + k_{-}) \cdot A[t] = k_{+} \)</p>
+<p>\(\Large A[t] = \frac{k_{+}}{k_{+} + k_{-}} \equiv P_0 \)</p>
+<p>となります．また，</p>
+<p>\(\Large  \frac{k_{+}}{k_{+} + k_{-}} \equiv \tau \)</p>
+<p>とすると，</p>
+<p>\(\Large  \frac{dA[t]}{dt} = k_{+} - (k_{+} + k_{-}) \cdot A[t] \)</p>
+<p>\(\Large \begin{eqnarray} \tau \cdot \frac{dA[t]}{dt} &amp;=&amp; \tau \cdot k_{+} - A[t] \\<br />
+&amp;=&amp; P_0 -A[t] <br />
+\end{eqnarray}　\)　</p>
+<p>となります． この式の意味は， 　<span class="Large-Bold-Red">A状態にいる割合</span> を示す． もちろん初期状態に依存します． </p>
+<p>次ページに，自己相関の求め方，さらには，A状態（値a）とD状態（値ｄ）のa, d,　の値を具体的に設定して計算してみましょう．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Autocorrelation-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

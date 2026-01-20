@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>successive_reaction</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">逐次反応における自己相関関数について-02</p>
+<p class="Large-Bold-Red"> ｒ回の逐次反応が起こる確率</p>
+<p>次に，ｔ秒からｔ+τ秒の間にｒ回の逐次反応が起こる確率を求めましょう． つまり， 反応の回数がr回起こらないと反応が起こらないので，</p>
+<table width="430" border="1">
+  <tr>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td width="43"><div align="center">0</div></td>
+    <td width="43"><div align="center">～</div></td>
+    <td width="43"><div align="center">r-1</div></td>
+    <td width="273"><div align="center">逐次反応は起こらない</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">r</div></td>
+    <td><div align="center">～</div></td>
+    <td><div align="center">2r-1</div></td>
+    <td><p align="center">１回逐次反応が起こる </p></td>
+  </tr>
+  <tr>
+    <td><div align="center">2r</div></td>
+    <td><div align="center">～</div></td>
+    <td><div align="center">3r-1</div></td>
+    <td><div align="center">２回逐次反応が起こる</div></td>
+  </tr>
+</table>
+<p>となります．</p>
+<p>ただし，この計算は，τ秒前にイベントが起こっていない場合です．</p>
+<p>すでに観測しているτ秒の間より以前に逐次反応が進行中かもしれない． </p>
+<p><img src="sequence-01.png" width="727" height="317" /></p>
+<p>なので， すでに<span class="Red-Bold">１回</span>各反応が起こっている場合には，</p>
+<table width="430" border="1">
+  <tr>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td width="43"><div align="center">0</div></td>
+    <td width="43"><div align="center">～</div></td>
+    <td width="43"><div align="center">r-2</div></td>
+    <td width="273"><div align="center">逐次反応は起こらない</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">r-1</div></td>
+    <td><div align="center">～</div></td>
+    <td><div align="center">2r-2</div></td>
+    <td><p align="center">１回逐次反応が起こる </p></td>
+  </tr>
+  <tr>
+    <td><div align="center">2r-1</div></td>
+    <td><div align="center">～</div></td>
+    <td><div align="center">3r-2</div></td>
+    <td><div align="center">２回逐次反応が起こる</div></td>
+  </tr>
+</table>
+<p>となるのです．同様に，すでに2回，すでに3回，といろいろな場合が想定されます．</p>
+<p>ですので，この平均を取ればよいわけです．</p>
+<p>これをまとめると，<span class="Large-Bold-Red">１回も起こらない確率</span>（ｍはこの逐次反応が起こる確率）は，</p>
+<p>\(\Large  prob \left[ m=0 \ in \ interval (t, t + \tau) \right] = <br />
+\begin{bmatrix}    &amp; (P_0 + P_1 + \cdots + P_{r-1}) \\<br />
++ &amp; (P_0 + P_1 + \cdots + P_{r-2}) \\<br />
++ &amp;  \cdots  \\<br />
++ &amp; P_0 \\ \end{bmatrix}  \)</p>
+<p>となります．書き換えると，</p>
+<p>\(\Large  prob \left[ m=0 \ in \ interval (t, t + \tau) \right] =　\frac{1}{r} \displaystyle \sum_{ i = 0 }^{ r } \displaystyle \sum_{ j = 0 }^{ r-i} P_j \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>同様に，<span class="Large-Bold-Red">１回起こる確率</span>は，</p>
+<p>\(\Large  prob \left[ m=1 \ in \ interval (t, t + \tau) \right] = <br />
+  \begin{bmatrix}    &amp; (P_r + P_{r+1} + \cdots + P_{2r-1}) \\<br />
+  + &amp; (P_{r-1} + P_r + \cdots + P_{2r-2}) \\<br />
+  + &amp;  \cdots  \\<br />
+  + &amp; P_1 + P_2+ \cdots + P_r \\ \end{bmatrix}  \)</p>
+<p>となります．書き換えると，</p>
+<p>\(\Large  \hspace{ 210pt } =　\frac{1}{r} \displaystyle \sum_{ i = 1 }^{ r } \displaystyle \sum_{ j = 1 }^{ r} P_{r-i+j} \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>同様に，<span class="Large-Bold-Red">2回起こる確率</span>は，</p>
+<p>\(\Large  prob \left[ m=2 \ in \ interval (t, t + \tau) \right] = <br />
+  \begin{bmatrix}    &amp; (P_{2r} + P_{2r+1} + \cdots + P_{3r-1}) \\<br />
+  + &amp; (P_{2r-1} + P_{2r} + \cdots + P_{3r-2}) \\<br />
+  + &amp;  \cdots  \\<br />
++ &amp; P_{r+1} + P_{r+2}+ \cdots + P_{2r} \\ \end{bmatrix}  \)</p>
+<p>となります．書き換えると，</p>
+<p>\(\Large  \hspace{ 210pt } =　\frac{1}{r} \displaystyle \sum_{ i = 1 }^{ r } \displaystyle \sum_{ j = 1 }^{ r} P_{2r-i+j} \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>つまり，<span class="Large-Bold-Red">ｍ回起こる確率（m＝０を除く）</span>は，</p>
+<p>\(\Large  prob \left[ m, \ m \ integer &gt;0 \ in \ interval (t, t + \tau) \right] =　\frac{1}{r} \displaystyle \sum_{ i = 1 }^{ r } \displaystyle \sum_{ j = 1 }^{ r} P_{rm-i+j} \)</p>
+<p>と書くことができます．</p>
+<p>&nbsp;</p>
+<p>次ページに，自己相関の導き出し方を計算していきましょう．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="successive_reaction-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="successive_reaction-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

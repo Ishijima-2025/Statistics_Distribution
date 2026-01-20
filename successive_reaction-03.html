@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>successive_reaction</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">逐次反応における自己相関関数について-03</p>
+<p class="Large-Bold-Red"> 自己相関</p>
+<p>自己相関の計算だが，ここでは逐次反応が起こる，起こらないの計算なので， 　</p>
+<p>　　起こる：+１ 　</p>
+<p>　　起こらない：－１ </p>
+<p>と考えていると想像できます．そうすることによって<a href="Autocorrelation-03.html">自己相関は無限大において０となりますね</a>． 場合分けを考えると， </p>
+<p>&nbsp;</p>
+<table width="708" border="1">
+  <tr>
+    <td><div align="center">イベント回数</div></td>
+    <td><div align="center">ｔ秒での状態</div></td>
+    <td><div align="center">ｔ+τ秒での状態</div></td>
+    <td><div align="center">相関</div></td>
+  </tr>
+  <tr>
+    <td width="138" rowspan="2"><div align="center">偶数回</div></td>
+    <td width="163"><div align="center">+1</div></td>
+    <td width="182"><div align="center">+1</div></td>
+    <td width="197"><div align="center">+1</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">-1</div></td>
+    <td><div align="center">-1</div></td>
+    <td><p align="center">+1</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><div align="center">奇数回</div></td>
+    <td><div align="center">+1</div></td>
+    <td><div align="center">-1</div></td>
+    <td><div align="center">-1</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">-1</div></td>
+    <td><div align="center">+1</div></td>
+    <td><div align="center">-1</div></td>
+  </tr>
+</table>
+<p>となり，<span class="Large-Bold-Red">偶数回のイベントでは相関が+1</span>，<span class="Large-Bold-Red">奇数回のイベントでは-1</span>となります．</p>
+<p> つまり，相関は 　<span class="X-Large-Bold-RED">相関　＝　偶数回のイベント　―　奇数回のイベント</span> を計算すれば良いことになります．</p>
+<p>つまり，<span class="Large-Bold-Red">偶数（even）</span>，<span class="Large-Bold-Red">偶数（odd）</span>はそれぞれ， </p>
+<p>\(\Large  prob \left[ m \ even \right] =　\frac{1}{r} \displaystyle \sum_{ i = 0 }^{ r } \displaystyle \sum_{ j = 0 }^{ r-i} P_j <br />
++\frac{1}{r} \displaystyle \sum_{ n = 0 }^{ \infty } \displaystyle \sum_{ i = 1 }^{ r } \displaystyle \sum_{ j = 1 }^{ r} P_{(2n+2)-i+j}\)</p>
+<p>\(\Large  prob \left[ m \ odd \right] =　\frac{1}{r} \displaystyle \sum_{ n = 0 }^{ \infty } \displaystyle \sum_{ i = 1 }^{ r } \displaystyle \sum_{ j = 1 }^{ r} P_{(2n+1)-i+j}\)</p>
+<p>となります．</p>
+<p><span class="X-Large-Bold-RED">自己相関，B（τ）</span>は，</p>
+<p>\(\Large \begin{eqnarray} B( \tau) <br />
+  &amp;=&amp; prob \left[ m \ even \right] - prob \left[ m \ odd \right] \\<br />
+&amp;=&amp;\frac{1}{r} \displaystyle \sum_{ i = 0 }^{ r } \displaystyle \sum_{ j = 0 }^{ r-i} P_j <br />
++\frac{1}{r} \displaystyle \sum_{ n = 0 }^{ \infty } \displaystyle \sum_{ i = 1 }^{ r } \displaystyle \sum_{ j = 1 }^{ r} P_{(2n+2)-i+j}<br />
+-
+\frac{1}{r} \displaystyle \sum_{ n = 0 }^{ \infty } \displaystyle \sum_{ i = 1 }^{ r } \displaystyle \sum_{ j = 1 }^{ r} P_{(2n+1)-i+j} \\<br />
+&amp;=&amp; 
+\frac{1}{r} \left[ \displaystyle \sum_{ i = 0 }^{ r } \displaystyle \sum_{ j = 0 }^{ r-i} P_j  +\displaystyle \sum_{ n = 0 }^{ \infty } \displaystyle \sum_{ i = 1 }^{ r }  \displaystyle \sum_{ j = 1 }^{ r} \left( P_{(2n+2)-i+j} -  P_{(2n+1)-i+j} \right) \right] \\<br />
+\end{eqnarray}　\)　</p>
+<p>となるのです．パワースペクトル，S(ω)はこの自己相関のフーリエ変換なので， </p>
+<p>\(\Large S( \omega) = 2 \ \displaystyle \int_{ 0 }^{ \infty } B( \tau)  \ cos \ \omega \ \tau \ d \tau \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>次ページに，実際の計算と実験結果を比較していきましょう．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="successive_reaction-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="successive_reaction-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

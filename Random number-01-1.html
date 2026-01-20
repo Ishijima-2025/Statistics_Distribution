@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Random number</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="250219.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="Red-Large-Bold">ランダムな数の発生方法-01</p>
+<p class="Red-Large-Bold">0．基本的な考え方</p>
+<p class="Large-Bold-Red">乱数から任意の分布データを作成するさいに，なぜ，累積関数を使うか，という問題ですが，とりあえず，ここ，に説明を行いました．</p>
+<p class="Large-Bold-Red">しかし，一般的には，逆関数法，という考え方を用いているようで，どのサイトも非常に簡単に証明しています．</p>
+<p class="Large-Bold-Red">しかし．．．．私にはなかなか直感的に理解することができず，色々探していたところ，<a href="https://www.youtube.com/watch?v=cbgpdRW_5kQ&amp;ab_channel=SaburoHiguchi" target="_blank">ここ</a>，の説明が一番しっくり行きました．</p>
+<p class="Large-Bold-Red"><a href="https://www.youtube.com/watch?v=cbgpdRW_5kQ&amp;ab_channel=SaburoHiguchi" target="_blank">こちらのサイト</a>では，ややこしい分布の解説を行っていますが，今回は単純な分布の場合について考えていきます．</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p class="Large-Bold-Red">まず，ある<span class="Red-Bold">確率密度分布，f(r)</span>，を考えます．</p>
+<p class="Large-Bold-Red"><img src="Random-01.png" width="588" height="443" alt=""/></p>
+<p class="Large-Bold-Red">図では指数分布を考えましたが，なんでもいいはずです．</p>
+<p class="Large-Bold-Red">この分布と，<span class="Red-Bold">乱数（０～１）の一様分布，f<sub>Y</sub>(y)</span>，とを対応付ければいいことになります．</p>
+<p class="Large-Bold-Red"><img src="Random-02.png" width="574" height="342" alt=""/></p>
+<p class="Large-Bold-Red">つまり，</p>
+<p class="Large-Bold-Red"><img src="Random-03.png" width="593" height="893" alt=""/></p>
+<p class="Large-Bold-Red"><span class="Red-Bold">確率密度分布のある領域の確率と一様分布のある領域の確率を対応</span>付けるような関数，</p>
+<p class="Large-Bold-Red">\(\Large  r = g(y) \)</p>
+<p class="Large-Bold-Red">を導き出せばいいということです．</p>
+<p class="Large-Bold-Red">つまり，</p>
+<p class="Large-Bold-Red">\(\Large  \displaystyle \int_0^r f(r') \cdot dr' = \displaystyle \int_0^y f_Y(y') \cdot dy' \)</p>
+<p class="Large-Bold-Red">となることになります．</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p class="Large-Bold-Red">ここで，<span class="Red-Bold">一様分布はフラットな確率密度</span>になるので，</p>
+<p class="Large-Bold-Red">\(\Large  \displaystyle  \int_0^y f_Y(y') \cdot dy' = y \)</p>
+<p class="Large-Bold-Red">となります．，</p>
+<p class="Large-Bold-Red">また，左辺は，<span class="Red-Bold">確率密度関数の累積密度関数，F(r)</span>，となるので，</p>
+<p class="Large-Bold-Red">\(\Large  \displaystyle F(r) = \int_0^r f(r') \cdot dr' = \displaystyle \int_0^y f_Y(y') \cdot dy' =y  \)</p>
+<p class="Large-Bold-Red">\(\Large  \displaystyle F(r) = y \)</p>
+<p class="Large-Bold-Red">\(\Large  \displaystyle y = F^{-1}(y) = F^{-1} \{ rand() \} \)</p>
+<p class="Large-Bold-Red">となり，累積密度関数の逆関数を用いればいいことになります．</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>次に，当初説明してきた解説方法にいきましょう．</p>
+<p><span class="style7"><a href="Random number-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Random number-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Random number</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ランダムな数の発生方法-03</p>
+<p class="Large-Bold-Red">２．指数分布</p>
+<p>では，指数分布をしているを考えていきましょう．</p>
+<p><img src="Exp-01.png" width="506" height="514" /></p>
+<p>\(\Large  P(x)   \propto e^{-k x} \)</p>
+<p>規格化条件は，</p>
+<p>\(\Large  1 = \int_0^\infty P(x) dx = \int_0^\infty  A e^{-k x} dx \)</p>
+<p>となります．従って，</p>
+<p>\(\Large \begin{eqnarray} 1 &amp;=&amp; A \int_0^\infty e^{-k x} dx \\<br />
+&amp;=&amp; 
+- \frac{A}{k} \left[ e^{-k x} \right]_0^\infty \\<br />
+&amp;=&amp; 
+- \frac{A}{k} \left[ 0-1 \right] \\<br />
+&amp;=&amp; 
+ \frac{A}{k} \\<br />
+\end{eqnarray}　\)　</p>
+<p>\(\Large  A = k\)</p>
+<p>\(\Large  P(x)   = k \ e^{-k x} \)</p>
+<p>となります．</p>
+<p>累積密度関数は，</p>
+<p>\(\Large \begin{eqnarray} \int_0^x P(m) dm &amp;=&amp; \int_0^\infty  k \  e^{-k m} dm \\<br />
+&amp;=&amp; 
+k \ \left( - \frac{1}{k} \right) \left[ e^{-k m} \right]_0^x \\<br />
+&amp;=&amp; 
+- \left[ e^{-k x}-1 \right] \\<br />
+&amp;=&amp; 
+ 1 - e^{-k x} \\<br />
+\end{eqnarray}　\)　</p>
+<p>となります．</p>
+<p>従って，<span class="Large-Bold-Red">P(x)に0から１の乱数</span>を与えれば，その数に応じたｘの値が求まります．</p>
+<p>\(\Large  Rand_{0-1}   = 1 -  e^{-k x} \)</p>
+<p>\(\Large    e^{-k x} = 1 - Rand_{0-1} \)</p>
+<p>対数をとれば，</p>
+<p>\(\Large    -k x =ln \left(1 - Rand_{0-1} \right) \)</p>
+<p>ここで， 1-Rand<sub>0-1</sub>は結局，Rand<sub>0-1</sub> となるので，（Randが0.2の場合，1-Randは0.8となるように）</p>
+<p>\(\Large    -k x =ln \left( Rand_{0-1} \right) \)</p>
+<p>\(\Large     x =- \frac{1}{k} ln \left( Rand_{0-1} \right) \)</p>
+<p>となります．</p>
+<p>累積積分は基本的には０から開始するものであるので，累積積分においては不定積分として，計算しても同じ答えとなると思います．（証明はしていませんが．．．）</p>
+<p>このように，指数分布の場合には，積分しても最初の確率密度と同じ関数となりますが，<span class="X-Large-Bold-RED">累積密度関数</span>にするところがポイントです．</p>
+<p>つぎに，正規分布を考えていきましょう．</p>
+<p><span class="style7"><a href="Random number-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Random number-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

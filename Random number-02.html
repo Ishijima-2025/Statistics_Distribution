@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Random number</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ランダムな数の発生方法-02</p>
+<p class="Large-Bold-Red">１．基本的な考え方</p>
+<p>まず，対象となる値がある分布をしているとしましょう．</p>
+<p><img src="Exp-01.png" width="506" height="514" /></p>
+<p>ここでは，指数分布を用意しました．</p>
+<p>縦軸は存在確率なので，<span class="X-Large-Bold-RED">すべての和が１</span>となるように規格化されています．</p>
+<p>つまり，これは，あるｘのときの存在確率が，P(x)である． これをdxという幅を考えると， </p>
+<p><img src="Exp-02.png" width="506" height="514" /></p>
+<p>の短冊の総面積がすべてのｘの事象が起こる確率です（＝１）</p>
+<p>つまり，ある<span class="Blue-Bold">x+dxがおこる確率は，すべての確率のうちのx+dxの短冊の割合</span>なので，<span class="Blue-Bold">全部の短冊の和のうちのx+dxの短冊の割合が起こりえる確率</span>となります．</p>
+<p><img src="Exp-03.png" width="558" height="411" /></p>
+<p>従って，<span class="Large-Bold-Red">この関数の最小値からｘまでの累積積分が，ｘがおこる確率</span>となります．</p>
+<p>では，具体的な分布を考えていきましょう．</p>
+<p><span class="style7"><a href="Random number-01-1.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Random number-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

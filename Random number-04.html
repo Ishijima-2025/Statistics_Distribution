@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Random number</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ランダムな数の発生方法-04</p>
+<p class="Large-Bold-Red">３．正規分布</p>
+<p>次に，正規分布をしているを考えていきましょう．</p>
+<p>\(\Large  P(x)   \propto e^{- \frac{x^2}{2  \sigma^2}} \)</p>
+<p>規格化条件は，</p>
+<p>\(\Large  1 = \int_{- \infty}^\infty P(x) dx = \int_{- \infty}^\infty  A e^{- \frac{x^2}{2  \sigma^2}} dx \)</p>
+<p>となります．<span class="Blue-Bold">積分範囲が-∞から∞になることに注意</span>してください．積分公式，</p>
+<p>\(\Large \int_{- \infty}^\infty   e^{- a \ x^2} dx = \sqrt{ \mathstrut \frac{\pi}{a}} \)</p>
+<p>より，</p>
+<p>\(\Large \begin{eqnarray} 1 &amp;=&amp; \int_{- \infty}^\infty  A e^{- \frac{x^2}{2  \sigma^2}} \\<br />
+&amp;=&amp; A  \sqrt{ \mathstrut \frac{\pi}{\frac{1}{ 2 \ \sigma^2}}} \\<br />
+&amp;=&amp; 
+A  \sqrt{ \mathstrut 2 \ \pi \ \sigma^2} \\<br />
+\end{eqnarray}　\)　</p>
+<p>\(\Large  A = \sqrt{ \mathstrut 2 \ \pi \ \sigma^2} \)</p>
+<p>\(\Large  P(x)=  \frac{1}{\sqrt{ \mathstrut 2 \ \pi \ \sigma^2}} e^{- \frac{x^2}{2  \sigma^2}} \)</p>
+<p>となります．</p>
+<p><img src="Gauss-01.png" width="468" height="92" /></p>
+<p>累積密度関数は，</p>
+<p>\(\Large  \int_{-\infty}^x P(m) dm = \frac{1}{\sqrt{ \mathstrut 2 \ \pi \ \sigma^2}} \int_{-\infty}^x   e^{- \frac{t^2}{2  \sigma^2}}　dt \)　</p>
+<p>となります．<span class="Blue-Bold">積分範囲が-∞からxになることに注意</span>してください．</p>
+<p><img src="Gauss-02.png" width="468" height="337" /> </p>
+<p>なので，</p>
+<p>\(\Large  Rand_{0-1} = \frac{1}{ \sqrt{ \mathstrut 2 \ \pi \ \sigma^2}} \int_{-\infty}^x   e^{- \frac{t^2}{2  \sigma^2}}　dt \)　</p>
+<p>となります．</p>
+<p>ランダム関数からｘを求めるには，上記の式の逆関数，誤差関数を使えばいいことになります．</p>
+<p>では，誤差関数を使って表してみましょう．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Random number-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Random number-04-2.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

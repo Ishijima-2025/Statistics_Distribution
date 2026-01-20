@@ -1,0 +1,175 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">正規分布の<span class="X-Large-Bold-Blue">和</span>の再現性</p>
+<p>&nbsp;</p>
+<p>独立な確率変数X，Yがそれぞれ確率分布P<sub>X</sub>(x), P<sub>Y</sub>(y)に従うとします．</p>
+<p>各確率変数の和，X+Yが従う確率分布をP<sub>X+Y</sub>(z)とする 確率P(X+Y=z)を考えると，</p>
+<p class="Large-Bold-Blue">　X+Y=z</p>
+<p>となるのは， </p>
+<p class="Large-Bold-Blue">　X=x, Y=z-x</p>
+<p>としたとき，両者の差がｚとなるすべての組み合わせとなります．</p>
+<p> XはPX(x)，YはPY(z-x)に従うので，両者が同時に起こる確率は，<span class="Large-Bold-Blue">PX(x)PY(z-x)</span> です．</p>
+<p>\( \Large    P_{X+Y} (z) = \displaystyle \int_{-\infty}^{ \infty } P_{X,Y} (t,z-t)  dt
+　\)</p>
+<p>X，Yがそれぞれ独立であると仮定したので，\( \Large    P_{X,Y} (z) = P_X(x) P_Y (y)
+　\)　が成立します．したがって，</p>
+<p>\( \Large    P_{X+Y} (z) = \displaystyle \int_{-\infty}^{ \infty } P_{X} (t) P_Y(z-t) dt
+　\)</p>
+<p>となります．それぞれが正規分布に従うので，</p>
+<p>\( \Large    P_{X} (x) = \frac{1}{\sqrt{2 \pi \sigma_X^2}} 
+exp \left[- \frac{(x-\mu_X)^2}{2 \sigma_X^2} \right] \)</p>
+<p>\( \Large    P_{Y} (x) = \frac{1}{\sqrt{2 \pi \sigma_Y^2}} 
+exp \left[- \frac{(x-\mu_Y)^2}{2 \sigma_Y^2} \right] \)</p>
+<p>となりますので，代入すると，</p>
+<p>\( \Large    \begin{eqnarray} P_{X+Y} (z) &amp;=&amp; \displaystyle \int_{-\infty}^{ \infty } \frac{1}{\sqrt{2 \pi \sigma_X^2}} 
+exp \left[- \frac{(t-\mu_X)^2}{2 \sigma_X^2} \right] <br />
+\frac{1}{\sqrt{2 \pi \sigma_Y^2}} 
+exp \left[- \frac{(z-t-\mu_Y)^2}{2 \sigma_Y^2} \right]dt
+　\\<br />
+&amp;=&amp; \frac{1}{2 \pi \sqrt{\sigma_X^2 \sigma_Y^2}} \displaystyle \int_{-\infty}^{ \infty }  
+exp \left[- \frac{(t-\mu_X)^2}{2 \sigma_X^2} - \frac{(z-t-\mu_Y)^2}{2 \sigma_Y^2} \right]dt
+　\\<br />
+\end{eqnarray}  \)</p>
+<p>と表すことができます．</p>
+<p>指数部分は，</p>
+<p>\(  \begin{eqnarray} &amp;&amp; - \frac{(t-\mu_X)^2}{2 \sigma_X^2} - \frac{(z-t-\mu_Y)^2}{2 \sigma_Y^2} \\<br />
+  &amp;=&amp; 
+- \frac{\sigma_Y^2(t^2-2 \mu_X t+ \mu_X^2) + \sigma_X^2 (z^2+t^2+\mu_Y^2 + 2 \mu_Y t-2zt-2\mu_Y z)}{2 \sigma_X^2 \sigma_Y^2} \\<br />
+&amp;=&amp; 
+- \frac{(\sigma_X^2 + \sigma_Y^2) \color{red}{t^2}-2(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y) \color{red}{t} + \sigma_Y^2 \mu_X^2 + \sigma_X^2 z^2 + \sigma_X^2 \mu_Y^2 - 2 \sigma_X^2 \mu_Y z} {2 \sigma_X^2 \sigma_Y^2}\\<br />
+&amp;=&amp; 
+- \frac{\sigma_X^2+\sigma_Y^2}{2\sigma_X^2 \sigma_Y^2} \left\{ \color{red}{t^2}-\frac{2(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \color{red}{t} + \frac{
+ \sigma_Y^2 \mu_X^2 + \sigma_X^2 z^2 + \sigma_X^2 \mu_Y^2 - 2 \sigma_X^2 \mu_Y z} { \sigma_X^2 + \sigma_Y^2} \right\} \\<br />
+\end{eqnarray}  \)</p>
+<p>\( \Large     t^2 + 2b t + c =  (t+b)^2 - b^2 +c \)より，</p>
+<p>\(  \begin{eqnarray} <br />
+&amp;=&amp; 
+- \frac{\sigma_X^2+\sigma_Y^2}{2\sigma_X^2 \sigma_Y^2} <br />
+\left\{ \color{red}{t^2}-\frac{2(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \color{red}{t} + \left[ \frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \right]^2 - \left[ \frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \right]^2+ \frac{
+ \sigma_Y^2 \mu_X^2 + \sigma_X^2 z^2 + \sigma_X^2 \mu_Y^2 - 2 \sigma_X^2 \mu_Y z} { \sigma_X^2 + \sigma_Y^2} \right\} \\<br />
+ &amp;=&amp; 
+- \frac{\sigma_X^2+\sigma_Y^2}{2\sigma_X^2 \sigma_Y^2} <br />
+\left\{ \left[ \color{red}{t}-\frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \right]^2  - \left[ \frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \right]^2+ \frac{
+ \sigma_Y^2 \mu_X^2 + \sigma_X^2 z^2 + \sigma_X^2 \mu_Y^2 - 2 \sigma_X^2 \mu_Y z} { \sigma_X^2 + \sigma_Y^2} \right\} \\ <br />
+\end{eqnarray}  \)</p>
+<p>第二，三項は，</p>
+<p>\(  \begin{eqnarray} <br />
+  &amp;&amp; 
+- \frac{\sigma_X^2+\sigma_Y^2}{2\sigma_X^2 \sigma_Y^2} <br />
+\left\{   - \left[ \frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \right]^2+ \frac{
+ \sigma_Y^2 \mu_X^2 + \sigma_X^2 z^2 + \sigma_X^2 \mu_Y^2 - 2 \sigma_X^2 \mu_Y z} { \sigma_X^2 + \sigma_Y^2} \right\} \\ <br />
+ &amp;=&amp; 
+- \frac{\sigma_X^2+\sigma_Y^2}{2\sigma_X^2 \sigma_Y^2} <br />
+\left\{   -  \frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)^2}{(\sigma_X^2 + \sigma_Y^2)^2} + \frac{
+ (\sigma_X^2 + \sigma_Y^2)(\sigma_Y^2 \mu_X^2 + \sigma_X^2 z^2 + \sigma_X^2 \mu_Y^2 - 2 \sigma_X^2 \mu_Y z)} { (\sigma_X^2 + \sigma_Y^2)^2} \right\} \\ <br />
+ &amp;=&amp; - \frac{\sigma_X^2+\sigma_Y^2}{2\sigma_X^2 \sigma_Y^2} \left\{ \begin
+ {array}{1}<br />
+-  \frac{\color{cyan}{\sigma_Y^4 \mu_X^2} + \color{red}{\sigma_X^4 z^2}  +\color{green}{\sigma_X^4 \mu_Y^2} + 2 \sigma_X^2 \sigma_Y^2 \mu_X z -2\sigma_X^2 \sigma_Y^2 \mu_X \mu_Y \color{blue}{-2\sigma_X^4  \mu_Y z}}{(\sigma_X^2 + \sigma_Y^2)^2}\\<br />
+  \frac{
+  \sigma_X^2\sigma_Y^2 \mu_X^2 + \color{red}{\sigma_X^4 z^2} + \color{green}{\sigma_X^4 \mu_Y^2} - \color{blue}{2 \sigma_X^4 \mu_Y z}+\color{cyan}{\sigma_Y^4 \mu_X^2} + \sigma_X^2 \sigma_Y^2z^2 + \sigma_X^2 \sigma_Y^2\mu_Y^2 - 2 \sigma_X^2 \sigma_Y^2\mu_Y z} { (\sigma_X^2 + \sigma_Y^2)^2}<br />
+  \end{array} \right\}
+ \\  <br />
+\end{eqnarray}  \)</p>
+<p>色の部分がキャンセルされるので，</p>
+<p>\(  \begin{eqnarray} <br />
+  &amp;=&amp; - \frac{\sigma_X^2+\sigma_Y^2}{2\sigma_X^2 \sigma_Y^2} \left\{ <br />
+  \frac{ -2 \sigma_X^2 \sigma_Y^2 \mu_X z + 2\sigma_X^2 \sigma_Y^2 \mu_X \mu_Y + 
+  \sigma_X^2\sigma_Y^2 \mu_X^2  + \sigma_X^2 \sigma_Y^2z^2 + \sigma_X^2 \sigma_Y^2\mu_Y^2 - 2 \sigma_X^2 \sigma_Y^2\mu_Y z}{(\sigma_X^2 + \sigma_Y^2)^2}<br />
+  \right\}
+\\ <br />
+&amp;=&amp; - \frac{\sigma_X^2+\sigma_Y^2}{2\sigma_X^2 \sigma_Y^2} \sigma_X^2 \sigma_Y^2 \left\{ <br />
+\frac{ -2  \mu_X z + 2 \mu_X \mu_Y + 
+   \mu_X^2  + z^2 + \mu_Y^2 - 2 \mu_Y z}{(\sigma_X^2 + \sigma_Y^2)^2}<br />
+\right\}
+ \\<br />
+&amp;=&amp; - \frac{ \{ z-(\mu_X + \mu_Y) \}^2}{2(\sigma_X^2  + \sigma_Y^2)}  \\ <br />
+\end{eqnarray}  \)</p>
+<p>と簡単になる．　</p>
+<p>指数部分に戻すと，</p>
+<p>\(  \begin{eqnarray} <br />
+ &amp;&amp; -\frac{\sigma_X^2 + \sigma_Y^2}{2\sigma_X^2  \sigma_Y^2} \left[ \color{red}{t}-\frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \right]^2<br />
+ - \frac{ \{ z-(\mu_X + \mu_Y) \}^2}{2(\sigma_X^2  + \sigma_Y^2)}  \\ <br />
+\end{eqnarray}  \)</p>
+<p>したがって，</p>
+<p>\(     \begin{eqnarray} P_{X+Y} (z) <br />
+&amp;=&amp; \frac{1}{2 \pi \sqrt{\sigma_X^2 \sigma_Y^2}} \displaystyle \int_{-\infty}^{ \infty }  
+exp \left[-\frac{\sigma_X^2 + \sigma_Y^2}{2\sigma_X^2  \sigma_Y^2} \left\{ \color{red}{t}-\frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \right\}^2<br />
+- \frac{ \{ z-(\mu_X + \mu_Y) \}^2}{2(\sigma_X^2  + \sigma_Y^2)} \right]dt
+　\\<br />
+&amp;=&amp; \frac{1}{2 \pi \sqrt{\sigma_X^2 \sigma_Y^2}} exp \left[- \frac{ \{ z-(\mu_X + \mu_Y) \}^2}{2(\sigma_X^2  + \sigma_Y^2)} \right] \displaystyle \int_{-\infty}^{ \infty }  
+exp \left[-\frac{\sigma_X^2 + \sigma_Y^2}{2\sigma_X^2  \sigma_Y^2} \left\{ \color{red}{t}-\frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \right\}^2<br />
+\right]dt
+　\\<br />
+\end{eqnarray}  \)</p>
+<p>積分項目は，</p>
+<p>\(     \begin{eqnarray} &amp;&amp; \displaystyle \int_{-\infty}^{ \infty }  
+exp \left[-\frac{\sigma_X^2 + \sigma_Y^2}{2\sigma_X^2  \sigma_Y^2} \left\{ \color{red}{t}-\frac{(\sigma_Y^2 \mu_X + \sigma_X^2 z - \sigma_X^2 \mu_Y)}{\sigma_X^2 + \sigma_Y^2} \right\}^2<br />
+\right]dt
+　\\<br />
+&amp;=&amp; \displaystyle \int_{-\infty}^{ \infty }  
+exp \left[-a\{ t-b\}^2
+  \right]dt
+  \\<br />
+\end{eqnarray}  \)</p>
+<p>と簡単に記載することができ，</p>
+<p>\( \Large    t-b
+= w　\)とすると，</p>
+<p>\( \Large    dt
+= dw　\)</p>
+<p>\(     \begin{eqnarray} <br />
+&amp;=&amp; \displaystyle \int_{-\infty}^{ \infty }  
+exp \left[-a w^2
+  \right]dt
+  \\<br />
+  &amp;=&amp; \sqrt{\frac{\pi}{a}} \\
+  <br />
+\end{eqnarray}  \)</p>
+<p>したがって，</p>
+<p>\(     \begin{eqnarray} P_{X+Y} (z) <br />
+  &amp;=&amp; \frac{1}{2 \pi \sqrt{\sigma_X^2 \sigma_Y^2}} exp \left[- \frac{ \{ z-(\mu_X + \mu_Y) \}^2}{2(\sigma_X^2  + \sigma_Y^2)} \right] <br />
+\sqrt{ \frac{\pi (2 \sigma_X^2 \sigma_Y^2)}{
+\sigma_X^2 + \sigma_Y^2}}　\\<br />
+&amp;=&amp; \frac{1}{2 \pi \sqrt{\sigma_X^2 \sigma_Y^2}} \sqrt{ \frac{\pi (2 \sigma_X^2 \sigma_Y^2)}{
+\sigma_X^2 + \sigma_Y^2}} exp \left[- \frac{ \{ z-(\mu_X + \mu_Y) \}^2}{2(\sigma_X^2  + \sigma_Y^2)} \right] 
+　\\<br />
+&amp;=&amp; \frac{1}{ \sqrt{2 \pi(\sigma_X^2 + \sigma_Y^2)}}  exp \left[- \frac{ \{ z-(\mu_X + \mu_Y) \}^2}{2(\sigma_X^2  + \sigma_Y^2)} \right] 
+　\\<br />
+\end{eqnarray}  \)</p>
+<p>これは，<br />
+  <span class="Large-Bold-Red">　平均：\( \Large    \mu_X + \mu_Y　\)<br />
+　分散：\( \Large    \sigma_X^2 + \sigma_Y^2　\)</span><br />
+の正規分布である．</p>
+<p>&nbsp;</p>
+<p><a href="Normal distribution-01.html"><img src="L-arrow.png" width="57" height="34" alt=""/></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a><a href="file:///D|/Dropbox/Homepage/index.html"></a><a href="Normal distribution-03.html"><img src="R-arrow.png" width="57" height="34" alt=""/></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

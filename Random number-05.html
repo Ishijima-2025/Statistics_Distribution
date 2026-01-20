@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Random number</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">ランダムな数の発生方法-05</p>
+<p class="Large-Bold-Red">４．Labview，エクセルでの計算</p>
+<p>次に，実際に，Labview，エクセルで正規分布の乱数を作成してみましょう．</p>
+<p class="X-Large-Bold-Blue">・Labview (ver.2009)</p>
+<p>前ページの</p>
+<p>\(\Large   \frac{1}{ \sqrt{ \mathstrut 2 \ \pi \ \sigma^2}} \int_{-\infty}^x   e^{- \frac{x^2}{2  \sigma^2}}　\)　</p>
+<p>の関数は，<span class="Blue-Bold">数学→確率と統計→確率→連続CDF</span>，にあります．</p>
+<p>（CDF；Cumulative Distribution Function）</p>
+<p>となります．この逆関数は同じ場所に，</p>
+<p>　<span class="X-Large-Bold-RED">連続逆CDF</span></p>
+<p>があります．このアイコンから，<span class="Large-Bold-Red">正規逆CDF</span>，を選択すればよいわけです．</p>
+<p>実際のプログラムは至って簡単で，</p>
+<p><img src="CDF-01.png" width="404" height="290" /></p>
+<p>で実行可能です．<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/LabView-Histogram-01.html">Labview用のヒストグラム</a>をとるときちんと設定した標準偏差の正規分布をしていることがわかります．</p>
+<p>&nbsp;</p>
+<p class="X-Large-Bold-Blue">・エクセル (ver.2016)</p>
+<p>エクセルの場合も非常に簡単で，</p>
+<p><a href="https://support.office.com/ja-jp/article/norm-dist-関数-edb1cc14-a21c-4e53-839d-8082074c9f8d" target="_blank">NORM.DIST(x,平均,標準偏差,関数形式)</a></p>
+<p>が正規確立密度関数（関数形式がFALSE）もしくは累積分布関数（関数形式がTRUE）を表します．</p>
+<p>この逆関数が，</p>
+<p><a href="https://support.office.com/ja-jp/article/norm-inv-関数-54b30935-fee7-493c-bedb-2278a9db7e13" target="_blank">NORM.INV(確率,平均,標準偏差)</a></p>
+<p>であり，指定した平均と標準偏差に対する正規分布の累積分布関数の逆関数の値を返します</p>
+<p>これも，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Chemical%20reactin-12.html">エクセル用のヒストグラム</a>をとるときちんと設定した標準偏差の正規分布をしていることがわかります．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Random number-04-2.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Random number-06.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

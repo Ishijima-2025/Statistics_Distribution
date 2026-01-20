@@ -1,0 +1,72 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">正規分布の再現性</p>
+<p>&nbsp;</p>
+<p><span class="Red-Bold">正規分布の再現性</span>とは，<a href="https://bellcurve.jp/statistics/course/7799.html" target="_blank">ここ</a>の文章によると，</p>
+<p class="Blue-Bold">正規分布に従うあるデータとそのデータとは独立な正規分布に従うデータを足したデータは正規分布に従う，</p>
+<p>というもののようです（<span class="Large-Bold-Red">”和”</span>と限定しているのだろうか？）</p>
+<p>これは結構重要な話で，</p>
+<p>　<span class="Blue">ある条件での計測結果と別の条件での計測結果に差があるか？</span></p>
+<p>を検定する際に，</p>
+<p>　<span class="Blue">差の分布を議論する</span></p>
+<p>際に使われるものです（この場合は<span class="Large-Bold-Red">”差”</span>だが，”和”で議論していていいのだろうか？？？）</p>
+<p>いくつかのサイト，<a href="https://mathlandscape.com/normal-distrib-reprod/" target="_blank">ここ</a>，<a href="https://risalc.info/src/st-normal-distribution-reproductive-property.html" target="_blank">ここ</a>，<a href="https://pandanote.info/?p=2537" target="_blank">ここ</a>，で説明がされているので，参考にしてまとめてみました．</p>
+<p>ただ，</p>
+<p>　<span class="Large-Bold-Blue">特性関数</span></p>
+<p>を使う方がとても簡単に説明できるのですが，私自身あまりなじみがない関数であり，さらに”和”はなんとか理解できましたが，<span class="Blue">”差”でつまづいています</span>ので，</p>
+<p>　<span class="Large-Bold-Blue">たたみ込み</span></p>
+<p>で計算してみました．</p>
+<p>結果的には解けたのですが，とてもやっかいな計算でした．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・和，X+Y，の場合</p>
+<p>基本的な考え方は，</p>
+<p>　X+Yの値がｚの場合，<br />
+　　X=t<br />
+　　Y=z-t</p>
+<p>となる確率の積である，ということです</p>
+<p><img src="Normal-Distribution-plus.jpg" width="800" height="238" alt=""/></p>
+<p class="Large-Bold-Red">・差，X-Y，の場合</p>
+<p>基本的な考え方は，</p>
+<p>　X-Yの値がｚの場合，<br />
+  　　　X=t<br />
+  　　　Y=t-z</p>
+<p>となる確率の積である，ということです</p>
+<p><img src="Normal-Distribution-minus.jpg" width="800" height="238" alt=""/></p>
+<p>&nbsp;</p>
+<p>この考えを基本に，たたみ込みで，解いていきましょう</p>
+<p><a href="Normal distribution-02.html">・X+Y</a></p>
+<p><a href="Normal distribution-03.html">・X-Y</a></p>
+<p>&nbsp;</p>
+<p><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a><a href="Top page.html"></a><a href="Normal distribution-02.html"><img src="R-arrow.png" width="57" height="34" alt=""/></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

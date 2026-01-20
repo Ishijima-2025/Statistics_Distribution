@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style2 {
+	font-size: large;
+	color: #0000FF;
+}
+.style3 {
+	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+.style7 {color: #000000; }
+-->
+</style>
+</head>
+
+<body>
+<h1 class="style1">ポアッソン分布-02</h1>
+<p>まず，ある箱を用意します．
+  <br />
+その<span class="style2">体積を，Ｖ</span>，とします．<br />
+その中には<span class="style2">分子が，Ｎ個</span>，入っています．<br />
+体積，Ｖの箱の中に，<span class="style2">小さいスペース，ｖ</span>，を考えましょう．<br />
+その中には，<span class="style2">分子が，ｎ個</span>，入っています．</p>
+<p><img src="Poisson.JPG" width="400" height="351" /></p>
+<p>完全に分子の分布がランダムだとすると，ｖの大きさのＶに対する比は，</p>
+<p><img src="Poisson-01.gif" width="68" height="62" /></p>
+<p>となります．<span class="style3">0&lt;P&lt;1</span>ですね．<br />
+スペース，ｖ，に含まれている分子の数の平均は，</p>
+<p><img src="Poisson-02.gif" width="104" height="40" /></p>
+<p>となります．<br />
+これは，<br />
+  <span class="style2">　平均ｎ個がスペースｖにＰの確率で存在し，<br />
+  　それ以外の分子が，ｖ以外の部分に存在する</span><br />
+ということになります．<br />
+ｎ個と（Ｎ－ｎ）個を二つのスペースに分割する場合の数は，分子はおのおの区別できませんので，その場合の値は，<span class="style3">二項分布</span>となり，</p>
+<p><img src="Poisson-03.gif" width="252" height="46" /></p>
+<p>となります．変形すると，</p>
+<p><img src="Poisson-04.gif" width="582" height="128" /></p>
+<p>さらに変形すると，</p>
+<p><img src="Poisson-05.gif" width="688" height="82" /></p>
+<p>となり，</p>
+<p><img src="Poisson-06.gif" width="696" height="82" /></p>
+<p>ここで，<span class="style2">Ｎを非常に大きい数</span>としますと，</p>
+<p><img src="Poisson-07.gif" width="696" height="82" /></p>
+<p>この部分が，１，となってしまいます．<br />
+さらに，公式，</p>
+<p><img src="Poisson-08.gif" width="200" height="76" /></p>
+<p>を使って，まとめると，</p>
+<p><img src="Poisson-09.gif" width="190" height="136" /></p>
+<p>となります．</p>
+<p>これが，<span class="style5">ポアッソン分布</span>です．</p>
+<p>では具体的な数値を入れてみましょう．</p>
+<p><span class="style7"><a href="Poisson-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Poisson-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p><br />
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
